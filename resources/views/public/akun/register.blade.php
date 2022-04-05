@@ -1,6 +1,6 @@
 @include('public.layout.header')
 
-<div class="container" style="background-color: #ff7f00; padding-top: 5%; padding-left:0px; padding-right: 0px;">
+<div class="tw-container tw-bg-[#ff7f00] tw-pt-[5%] tw-px-0">
 	<div class="brand-servisin">
 		<img src="assets/img/brand/servisin.png" width="255">
 	</div>

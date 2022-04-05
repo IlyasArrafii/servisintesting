@@ -15,19 +15,19 @@
             <div class="tw-mx-auto ">
                 <div class="tw-flex tw-flex-row">
                     <img src="assets/img/icon1/profile.png" class="tw-ml-3 tw-p-2" style="width: 35px;">
-                    <span class="tw-font-poppins tw-text-sm tw-text-center tw-mt-2 tw-ml-1">Afif Fathurrahman</span>
+                    <span class="tw-font-poppins tw-text-sm tw-text-center tw-mt-2 tw-ml-1">{{ Auth::user()->name }}</span>
                 </div>
             </div>
             <div class="tw-mx-auto ">
                 <div class="tw-flex tw-flex-row">
                     <img src="assets/img/icon1/telephone.png" class="tw-ml-3 tw-p-2" style="width: 35px;">
-                    <span class="tw-font-poppins tw-text-sm tw-text-center tw-mt-2 tw-ml-1">0895-34200-1126</span>
+                    <span class="tw-font-poppins tw-text-sm tw-text-center tw-mt-2 tw-ml-1">{{ Auth::user()->notelpon }}</span>
                 </div>
             </div>
             <div class="tw-mx-auto ">
                 <div class="tw-flex tw-flex-row">
                     <img src="assets/img/icon1/at.png" class="tw-ml-3 tw-p-2" style="width: 35px;">
-                    <span class="tw-font-poppins tw-text-sm tw-text-center tw-mt-2 tw-ml-1">afif.fathurrahman03@gmail.com</span>
+                    <span class="tw-font-poppins tw-text-sm tw-text-center tw-mt-2 tw-ml-1">{{ Auth::user()->email }}</span>
                 </div>
             </div>
             <div class="tw-flex tw-mt-3">

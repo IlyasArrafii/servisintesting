@@ -55,7 +55,7 @@
 				</li>
 
 				<li class="nav-item">
-					<a href="{{url('/login')}}" class="nav-link">
+					<a href="{{url('/profil')}}" class="nav-link">
 						<img src="assets/img/icon/user.png" width="45" class="icon-nav-profile">
 					</a>
 				</li>

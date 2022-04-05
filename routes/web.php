@@ -72,9 +72,10 @@ Route::get('/profil', [PagesController::class, 'profil']);
 // Route::get('/tolak/{id}', [PemesananController::class, 'tolak']);
 // >>>>>>> 73d132179453262b0042b91f94535f508129bd11
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [PagesController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

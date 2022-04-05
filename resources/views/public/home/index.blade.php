@@ -6,7 +6,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-8 justify-content-left">
-				<p class="text-suvis">Suvis Indonesia <br> <span class="text-tanggal">Selasa 3 Maret 2021</span></p>
+				<p class="text-suvis">Servisin<br> <span class="text-tanggal">Selasa 3 Maret 2021</span></p>
+				<p class="tw-text-sm tw-text-white">Hi, {{ Auth::user()->name }}!</p>
 			</div>
 			<div class="col-4 justify-content-right text-right">
 				<a href="">
