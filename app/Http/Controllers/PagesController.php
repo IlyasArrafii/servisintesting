@@ -32,4 +32,9 @@ class PagesController extends Controller
 
         return view('public.akun.profil');
     }
+    public function transaksi()
+    {
+
+        return view('public.transaksi.index');
+    }
 }

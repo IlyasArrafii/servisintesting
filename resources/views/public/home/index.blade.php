@@ -7,7 +7,9 @@
 		<div class="row">
 			<div class="col-8 justify-content-left">
 				<p class="text-suvis">Servisin<br> <span class="text-tanggal">Selasa 3 Maret 2021</span></p>
+				@if(isset(Auth::user()->name))
 				<p class="tw-text-sm tw-text-white">Hi, {{ Auth::user()->name }}!</p>
+				@endif
 			</div>
 			<div class="col-4 justify-content-right text-right">
 				<a href="">

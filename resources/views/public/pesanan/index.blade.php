@@ -10,8 +10,8 @@
             </div>
 
         </div>
-        <div class="tw-text-center tw-mx-auto tw-mr-[40%] md:tw-mx-auto md:tw-mr-[46%] md:tw-text-center">
-            <div class="tw-mx-auto">
+        <div class="tw-text-center tw-mx-auto tw-mr-[40%] md:tw-mx-auto md:tw-mr-[48%] md:tw-text-center">
+            <div class="tw-text-center tw-mx-auto">
                 <span class="tw-m-auto tw-text-center tw-text-white tw-font-poppins">Pesanan</span>
             </div>
         </div>
