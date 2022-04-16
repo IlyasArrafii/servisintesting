@@ -31,6 +31,7 @@
 <script type="text/javascript" src="{{ asset('/js/app.js')}}"></script>
 <script src="jquery.min.js"></script>
 <script src="assets/owlcarousel/owl.carousel.min.js"></script>
+<script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
 <script type="text/javascript">
 	if ($('.pages').text() == 'profile') {
 		$(".icon-nav-profile").css({

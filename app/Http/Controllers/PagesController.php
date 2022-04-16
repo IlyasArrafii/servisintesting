@@ -34,7 +34,10 @@ class PagesController extends Controller
     }
     public function transaksi()
     {
-
         return view('public.transaksi.index');
+    }
+    public function pemesanan()
+    {
+        return view('public.transaksi.detail');
     }
 }
