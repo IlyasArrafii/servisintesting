@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,13 +31,11 @@ Route::get('/detail-pemesanan', [PagesController::class, 'pemesanan']);
 
 
 
-// // ====================================================================
-// // Admin
+//====================================================================
+// Admin
 
-// // Route::group(['middleware']);
-// // Route Back End
-// Route::get('/loginadmin', [AuthController::class, 'loginadmin']);
-// Route::post('/admpost', [AuthController::class, 'PostLoginAdmin']);
+// Route Back End
+Route::get('/dashboard-admin', [DashboardController::class, 'index']);
 
 // Route::get('/logoutadmin', [AuthController::class, 'logoutadmin']);
 
