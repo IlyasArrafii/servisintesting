@@ -1,4 +1,4 @@
-@include('../layout/header.php')
+@include('admin.layout.header')
 
 <div class="main-content">
   <section class="section">
@@ -55,4 +55,4 @@
   </form>
 
 </div>
-@include('../layout/footer.php')
+@include('admin.layout.footer')

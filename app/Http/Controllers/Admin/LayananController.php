@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\generateKode;
 use App\Models\Layanan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class LayananController extends Controller
 {
@@ -15,7 +17,8 @@ class LayananController extends Controller
      */
     public function index()
     {
-        //
+        $layanan = Layanan::all();
+        return view('admin.layanan.layanan', compact('layanan'));
     }
 
     /**
@@ -25,7 +28,12 @@ class LayananController extends Controller
      */
     public function create()
     {
-        //
+        $generateKode = new generateKode();
+        $kode =  $generateKode->KodeLayanan();
+
+        //DB Layanan
+        $layanan = Layanan::All();
+        return view('admin.layanan.addlayanan', compact('kode', 'layanan'));
     }
 
     /**
@@ -36,7 +44,16 @@ class LayananController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'icon' => 'required'
+        ]);
+        Layanan::create([
+            'kode_layanan' => $request->input('kode'),
+            'nama_layanan' => $request->input('nama'),
+            'icon' => $request->file('icon')->store('image'),
+        ]);
+        return redirect('/layanan')->with('success', 'Data Berhasil Ditambahkan');
     }
 
     /**
@@ -56,9 +73,10 @@ class LayananController extends Controller
      * @param  \App\Models\Layanan  $layanan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Layanan $layanan)
+    public function edit($id)
     {
-        //
+        $layanan = Layanan::where('id', $id)->get();
+        return view('admin.layanan.editlayanan', compact('layanan'));
     }
 
     /**
@@ -70,7 +88,41 @@ class LayananController extends Controller
      */
     public function update(Request $request, Layanan $layanan)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'icon' => 'required',
+        ]);
+        if ($request->file('icon')) {
+            $icon = $request->file('icon')->store('image');
+            $data = Layanan::where('kode_layanan', $request->input('kode'))->first();
+            if (!empty($data->icon)) {
+                $test = Storage::delete($data->icon);
+                $hasil = $icon;
+                Layanan::where('kode_layanan', $request->input('kode'))
+                    ->update([
+                        'kode_layanan' => $request->input('kode'),
+                        'nama_layanan' => $request->input('nama'),
+                        'icon' => $hasil
+                    ]);
+            } else {
+                $hasil = $icon;
+                Layanan::where('kode_layanan', $request->input('kode'))
+                    ->update([
+                        'kode_layanan' => $request->input('kode'),
+                        'nama_layanan' => $request->input('nama'),
+                        'icon' => $hasil
+                    ]);
+            }
+        } else {
+            $data = Layanan::where('kode_layanan', $request->input('kode'))->first();
+            Layanan::where('kode_layanan', $request->input('kode'))
+                ->update([
+                    'kode_layanan' => $request->input('kode'),
+                    'nama_layanan' => $request->input('nama'),
+                    'icon' => $data->icon
+                ]);
+        }
+        return redirect('/layanan')->with('warning', 'Data Berhasil Di Update');
     }
 
     /**
@@ -79,8 +131,12 @@ class LayananController extends Controller
      * @param  \App\Models\Layanan  $layanan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Layanan $layanan)
+    public function destroy(Layanan $layanan, $id)
     {
-        //
+        if ($layanan->icon) {
+            Storage::delete($layanan->icon);
+        }
+        Layanan::where('id', $id)->delete();
+        return redirect('/layanan')->with('Danger', 'Data Berhasil Dihapus');
     }
 }

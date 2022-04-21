@@ -1,4 +1,4 @@
-@include('../layout/header.php')
+@include('admin.layout.header')
 
 <div class="main-content">
 	<section class="section">
@@ -13,23 +13,24 @@
 				<thead>
 					<tr>
 						<th>No</th>
+						<th>Kode Pemesanan</th>
 						<th>Nama Lengkap</th>
 						<th>No.Whatsapp</th>
-						<th>Email</th>
 						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
-
+					@foreach($pemesanan as $item)
 					<tr>
 						<td>{{ $loop->iteration }}</td>
-						<td>{{$item->uid}}</td>
-						<td>{{$item->nama}}</td>
-						<td>{{$item->email}}</td>
-						<td class="text-center"><a href="https://wa.me/+6285646639557?text=Apakah Benar Anda Telah Melakukan Pemesanan ?" class="btn btn-success">Konformasi</a>
+						<td>{{$item->kode_pemesanan}}</td>
+						<td>{{$item->name}}</td>
+						<td>{{$item->notelpon}}</td>
+						<td class="text-center"><a href="https://wa.me/+62{{$item->notelpon}}?text=Apakah Benar Anda Telah Melakukan Pemesanan di aplikasi servisin dengan data berikut : %0A%0ANama : {{$item->name}}%0AAlamat : {{$item->alamat}}%0AKecamatan : {{$item->kecamatan}}%0AKota : {{$item->kota}}%0AKeluhan : {{$item->keluhan}}" class="btn btn-success">Konformasi</a>
+							<a href="{{url('/detail-pesanan/'.$item->id.'')}}" class="btn btn-primary">Detail Pesanan</a>
 						</td>
 					</tr>
-
+					@endforeach
 
 				</tbody>
 
@@ -38,4 +39,4 @@
 		</div>
 	</div>
 </div>
-@include('../layout/footer.php')
+@include('admin.layout.footer')

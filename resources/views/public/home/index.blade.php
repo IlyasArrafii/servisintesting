@@ -207,10 +207,10 @@
 					</div>
 					<p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
 				</div>
-				<!-- 		<div class="item">
-			<img src="assets/img/konsumen/1.jpg" class="photo_testi mx-auto d-block">
-			<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-		</div> -->
+				<div class="item">
+					<img src="assets/img/konsumen/1.jpg" class="photo_testi mx-auto d-block">
+					<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+				</div>
 			</div>
 		</div>
 	</div>

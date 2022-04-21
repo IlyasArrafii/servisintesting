@@ -1,4 +1,4 @@
-@include('../layout/header.php')
+@include('admin.layout.header')
 
 <div class="main-content">
   <section class="section">
@@ -7,7 +7,9 @@
     </div>
   </section>
 
-  <form action="" method="POST" enctype="multipart/form-data">
+  <form action="{{url('/layanan/tambah')}}" method="POST" enctype="multipart/form-data">
+    @csrf
+
     <div class="row">
       <div class="col-12">
         <div class="card">
@@ -16,7 +18,7 @@
             <div class="form-group row mb-4">
               <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Kode Layanan</label>
               <div class="col-sm-12 col-md-7">
-                <input type="text" class="form-control" name="kode" readonly autocomplete="off" placeholder="L0001">
+                <input type="text" class="form-control" name="kode" readonly autocomplete="off" placeholder="Kode Layanan" value="{{$kode}}">
               </div>
             </div>
 
@@ -34,12 +36,12 @@
               </div>
             </div>
 
-            <div class="form-group row mb-4">
+            <!-- <div class="form-group row mb-4">
               <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Harga</label>
               <div class="col-sm-12 col-md-7">
                 <input type="text" class="form-control" name="harga" autocomplete="off" placeholder="10000">
               </div>
-            </div>
+            </div> -->
 
             <div class="form-group row mb-4">
               <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
@@ -56,4 +58,4 @@
 
 </div>
 
-@include('../layout/footer.php')
+@include('admin.layout.footer')

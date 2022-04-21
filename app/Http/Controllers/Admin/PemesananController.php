@@ -15,7 +15,8 @@ class PemesananController extends Controller
      */
     public function index()
     {
-        //
+        $pemesanan = Pemesanan::all();
+        return view('admin.pemesanan.pemesanan', compact('pemesanan'));
     }
 
     /**
@@ -25,7 +26,8 @@ class PemesananController extends Controller
      */
     public function create()
     {
-        //
+        $pemesanan = Pemesanan::all();
+        return view('admin.pemesanan.detail', compact('pemesanan'));
     }
 
     /**

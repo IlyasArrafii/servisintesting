@@ -2200,6 +2200,9 @@ input[type=file]::file-selector-button:hover {
 .tw-ml-9 {
   margin-left: 2.25rem;
 }
+.tw--mt-3 {
+  margin-top: -0.75rem;
+}
 .tw-block {
   display: block;
 }
@@ -2516,10 +2519,6 @@ input[type=file]::file-selector-button:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(28 100 242 / var(--tw-bg-opacity));
 }
-.hover\:tw-bg-orange-400:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 138 76 / var(--tw-bg-opacity));
-}
 .hover\:tw-bg-\[\#ff7f00\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 127 0 / var(--tw-bg-opacity));
@@ -2553,10 +2552,6 @@ input[type=file]::file-selector-button:hover {
   --tw-border-opacity: 1;
   border-color: rgb(75 85 99 / var(--tw-border-opacity));
 }
-.tw-dark .dark\:tw-bg-\[\#ff7f00\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 127 0 / var(--tw-bg-opacity));
-}
 .tw-dark .dark\:tw-bg-orange-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(255 138 76 / var(--tw-bg-opacity));
@@ -2564,10 +2559,6 @@ input[type=file]::file-selector-button:hover {
 .tw-dark .dark\:tw-text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-.tw-dark .dark\:hover\:tw-bg-orange-400:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 138 76 / var(--tw-bg-opacity));
 }
 .tw-dark .dark\:hover\:tw-bg-\[\#ff7f00\]:hover {
   --tw-bg-opacity: 1;

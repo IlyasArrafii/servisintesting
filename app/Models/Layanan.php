@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Layanan extends Model
 {
-    use HasFactory;
+    protected $table = "layanan";
+    protected $guarded = ['created_at', "updated_at"];
 }

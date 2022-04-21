@@ -13,8 +13,8 @@
   <!-- CSS Libraries -->
 
   <!-- Template CSS -->
-  <link rel="stylesheet" href="{{url('assetsadmin/css/style.css')}}">
-  <link rel="stylesheet" href="{{url('assetsadmin/css/components.css')}}">
+  <link rel="stylesheet" href="{{ url('assets/admin/css/style.css')}}">
+  <link rel="stylesheet" href="{{ url('assets/admin/css/components.css')}}">
 
   <!-- Hightchart -->
   <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -101,22 +101,22 @@
           <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
             <li class="nav-item dropdown">
-              <a href="../dashboard/dashboard.php" class="nav-link"><i class="fa fa-fire"></i><span>Dashboard</span></a>
+              <a href="{{url('/dashboard-admin')}}" class="nav-link"><i class="fa fa-fire"></i><span>Dashboard</span></a>
             </li>
             <li class="menu-header">Post</li>
             <li class="nav-item dropdown">
-              <a class="nav-link" href="../layanan/layanan.php"><i class="fas fa-file"></i><span>Add Layanan</span></a>
-              <a class="nav-link" href="../artikel/artikel.php"><i class="fas fa-book"></i><span>Post Artikel</span></a>
+              <a class="nav-link" href="{{url('/layanan')}}"><i class="fas fa-file"></i><span>Add Layanan</span></a>
+              <a class="nav-link" href="{{url('/artikel')}}"><i class="fas fa-book"></i><span>Post Artikel</span></a>
             </li>
 
             <li class="menu-header">Transaction</li>
             <li class="nav-item dropdown">
-              <a class="nav-link" href="../pemesanan/pemesanan.php"><i class="fa fa-shopping-cart"></i><span>Pemesanan</span></a>
+              <a class="nav-link" href="{{url('/pemesanan')}}"><i class="fa fa-shopping-cart"></i><span>Pemesanan</span></a>
             </li>
 
             <li class="menu-header">Data User</li>
             <li class="nav-item dropdown">
-              <a class="nav-link" href="../konsumen/konsumen.php"><i class="fas fa-users"></i><span>Konsumen</span></a>
+              <a class="nav-link" href="{{url('/konsumen')}}"><i class="fas fa-users"></i><span>Konsumen</span></a>
               <a class="nav-link" href="../penyediajasa/penyediajasa.php"><i class="fas fa-users"></i><span>Penyedia Jasa</span></a>
               <a class="nav-link" href="../admin/admin.php"><i class="fa fa-user-circle"></i><span>Admin</span></a>
             </li>
