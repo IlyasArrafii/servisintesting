@@ -13,8 +13,8 @@
   <!-- CSS Libraries -->
 
   <!-- Template CSS -->
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="{{url('assetsadmin/css/style.css')}}">
+  <link rel="stylesheet" href="{{url('assetsadmin/css/components.css')}}">
 
   <!-- Hightchart -->
   <script src="https://code.highcharts.com/highcharts.js"></script>

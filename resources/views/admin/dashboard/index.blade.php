@@ -1,4 +1,5 @@
-@include('../layout/header.php')
+@include('admin.layout.header')
+
 <!-- Main Content -->
 <div class="main-content">
   <section class="section">
@@ -404,4 +405,5 @@
 </footer>
 </div>
 </div>
-@include('../layout/footer.php')
+
+@include('admin.layout.header')
