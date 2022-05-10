@@ -1,3 +1,4 @@
+@include('public.layout.header')
 <x-guest-layout>
     <div class="tw-container md:tw-max-w-full tw-bg-[#ff7f00] tw-px-0 tw-pt-[5%]" style="background-color: #ff7f00;">
         <div class="md:tw-px-5">
@@ -23,6 +24,12 @@
                         </div>
                         <div class="form-group tw-w-full input">
                             <x-input id="password" class="tw-w-full tw-rounded tw-px-3 tw-border tw-border-gray-500 tw-pt-2 tw-pb-2 focus:tw-outline-none input active:tw-outline-none tw-block" type="password" name="password" required autocomplete="new-password" placeholder="Password" />
+
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>Harap Masukkan Password Minimal 8 Karakter</strong>
+                            </span>
+                            @enderror
                         </div>
                         <div class="form-group tw-w-full input">
                             <x-input id="password_confirmation" class="tw-w-full tw-rounded tw-px-3 tw-border tw-border-gray-500 tw-pt-2 tw-pb-2 focus:tw-outline-none input active:tw-outline-none tw-block" type="password" name="password_confirmation" required placeholder="Konfirmasi Password" />
@@ -31,8 +38,8 @@
                         <button type="submit" class="tw-w-full tw-rounded-xl tw-bg-orange-500 tw-text-white hover:tw-bg-orange-600 tw-duration-300 tw-px-10 tw-py-2.5 btn-block">Daftar</button>
                     </form>
                 </div>
-                <div class="tw-text-center tw-pt-2">
-                    <p class="tw-text-center">Sudah Punya Akun? <a class="tw-text-sm tw-text-[#ff7f00]" href="{{url('/register')}}">Masuk Disini</a></p>
+                <div class="tw-text-center tw-pt-2 tw-mb-32">
+                    <p class="tw-text-center">Sudah Punya Akun? <a class="tw-text-sm tw-text-[#ff7f00]" href="{{url('/login')}}">Masuk Disini</a></p>
                 </div>
             </div>
         </div>

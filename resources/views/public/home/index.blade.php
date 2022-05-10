@@ -48,37 +48,22 @@
 		</div>
 	</div>
 
-	<div class="tw-cointainer justify-content-center tw-mx-auto">
-
-		<div class="tw-columns-4 tw-mx-3 tw-my-auto justify-content-center ">
-			<a href="aa">
-				<div class="tw-border tw-rounded-lg tw-border-[#fff] tw-bg-[#fff]">
-					<img src="assets/img/icon/ac.png" class="tw-mx-auto tw-pt-2 tw-mb-1" style="width: 44px;">
-					<p class="p-tittle text-center">AC</p>
-				</div>
-			</a>
-			<a href="aaa">
-				<div class="tw-border tw-rounded-lg tw-border-[#fff] tw-bg-[#fff]">
-					<img src="assets/img/icon/kulkas.png" class="tw-mx-auto tw-pt-2 tw-mb-1" style="width: 44px;">
-					<p class="p-tittle text-center">Kulkas</p>
-				</div>
-			</a>
-			<a href="">
-				<div class="tw-border tw-rounded-lg tw-border-[#fff] tw-bg-[#fff]">
-					<img src="assets/img/icon/wm.png" class="tw-mx-auto tw-pt-2 tw-mb-1" style="width: 44px;">
-					<p class="p-tittle text-center"> Mesin Cuci</p>
-				</div>
-			</a>
-			<a href="">
-				<div class="tw-border tw-rounded-lg tw-border-[#fff] tw-bg-[#fff]">
-					<img src="assets/img/icon/vacum.png" class="tw-mx-auto tw-pt-2 tw-mb-1" style="width: 44px;">
-					<p class="p-tittle text-center">Cleaning</p>
-				</div>
-			</a>
+	<div class="tw-container tw-mx-auto">
+		<div class="tw-grid tw-grid-cols-4 tw-mx-1 tw-content-center">
+			@foreach($layanan as $item)
+			<div class="tw-mx-2 tw-mb-2 tw-mt-3">
+				<a href="{{url('/pemesanan/'.$item->slug.'')}}">
+					<div class="tw-border tw-rounded-lg tw-border-[#fff] tw-bg-[#fff]">
+						<img src="{{ asset('storage/'.$item->icon.'')}}" class="tw-mx-auto tw-pt-2 tw-mb-1" style="width: 44px;">
+						<p class="tw-text-sm tw-text-center tw-text-poppins tw-mb-1">{{$item->nama_layanan}}</p>
+					</div>
+				</a>
+			</div>
+			@endforeach
 		</div>
 
 
-		<div class="tw-columns-4 tw-mx-3 tw-mt-3 justify-content-center">
+		<!-- <div class="tw-columns-4 tw-mx-3 tw-mt-3 justify-content-center">
 			<a href="">
 				<div class="tw-border tw-rounded-lg tw-border-[#fff] tw-bg-[#fff]">
 					<img src="assets/img/icon/tv.png" class="tw-mx-auto tw-pt-2 tw-mb-1" style="width: 44px;">
@@ -107,7 +92,7 @@
 				</div>
 			</a>
 
-		</div>
+		</div> -->
 	</div>
 </div>
 
@@ -230,7 +215,7 @@
 		font-weight-bold">Bergabunglah Bersama Kami</span>
 			<p class="text-left">Dapatkan berbagai keuntungan menjadi mitra Penyedia Jasa di
 				Servisin!</p>
-			<a href="" class="btn btn-daftar">Pelajari Selengkapnya</a>
+			<a href="https://bit.ly/mitraservisin" class="btn btn-daftar">Daftar Mitra!</a>
 		</div>
 	</div>
 </div>

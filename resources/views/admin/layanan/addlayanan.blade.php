@@ -35,6 +35,12 @@
                 <input type="text" class="form-control" name="nama" autocomplete="off" placeholder="AC">
               </div>
             </div>
+            <div class="form-group row mb-4">
+              <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Syarat dan Ketentuan</label>
+              <div class="col-sm-12 col-md-7">
+                <textarea type="text" class="form-control" name="syarat" placeholder="Syarat dan Ketentuan"></textarea>
+              </div>
+            </div>
 
             <!-- <div class="form-group row mb-4">
               <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Harga</label>
@@ -47,7 +53,7 @@
               <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
               <div class="col-sm-12 col-md-7">
                 <button class="btn btn-primary">Simpan</button>
-                <a href="layanan.php" class="btn btn-danger">Cancel</a>
+                <a href="{{url('/layanan')}}" class="btn btn-danger">Cancel</a>
               </div>
             </div>
           </div>

@@ -17,18 +17,19 @@
         </div>
     </div>
 </div>
+@foreach($pemesanan as $item)
 <div class="tw-container tw-mx-auto tw-mt-5">
     <div class="tw-mx-3">
         <div class="tw-border-[#fff] tw-bg-[#fff] tw-rounded-xl tw-border tw-mt-1">
             <p class="tw-my-1 tw-px-3 tw-pt-3 tw-font-extrabold tw-font-poppins tw-text-sm">Data Pemesanan</p>
             <p class="tw-my-1 tw-px-3 tw-pt-3 tw-font-extrabold tw-font-poppins tw-text-sm">Nama</p>
-            <p class="tw-my-1 tw-px-3 tw-font-poppins tw-text-sm tw-mt-1">Afif Fathurrahman</p>
+            <p class="tw-my-1 tw-px-3 tw-font-poppins tw-text-sm tw-mt-1">{{$item->name}}</p>
             <p class="tw-my-1 tw-px-3 tw-font-extrabold tw-font-poppins tw-text-sm tw-mt-1">Alamat Lokasi</p>
-            <p class="tw-my-1 tw-px-3 tw-font-poppins tw-text-sm tw-mt-1">Jl. H. Syukur VIC Blok C-14 Sedati, Sidoarjo </p>
+            <p class="tw-my-1 tw-px-3 tw-font-poppins tw-text-sm tw-mt-1">{{$item->alamat}}</p>
             <p class="tw-my-1 tw-px-3 tw-font-extrabold tw-font-poppins tw-text-sm tw-mt-1">Detail Alamat</p>
-            <p class="tw-my-1 tw-px-3 tw-font-poppins tw-text-sm tw-mt-1">Pagar Putih</p>
+            <p class="tw-my-1 tw-px-3 tw-font-poppins tw-text-sm tw-mt-1">{{$item->detail_alamat}}</p>
             <p class="tw-my-1 tw-px-3 tw-font-extrabold tw-font-poppins tw-text-sm tw-mt-1">Nomor Telepon (Whatssapp)</p>
-            <p class="tw-my-1 tw-px-3 tw-font-poppins tw-text-sm tw-mt-1 tw-mb-3">085663773</p>
+            <p class="tw-my-1 tw-px-3 tw-font-poppins tw-text-sm tw-mt-1 tw-mb-3">{{$item->notelpon}}</p>
         </div>
     </div>
 </div>
@@ -38,15 +39,20 @@
         <div class="tw-border-[#fff] tw-bg-[#fff] tw-rounded-xl tw-border tw-mt-1 tw-shadow-sm">
             <p class="tw-my-1 tw-px-3 tw-pt-3 tw-font-extrabold tw-font-poppins tw-text-sm">Detail Pesanan</p>
             <p class="tw-my-1 tw-px-3 tw-font-poppins tw-font-extrabold tw-text-sm tw-pt-2">Layanan</p>
-            <p class="tw-my-1 tw-px-3 tw-font-poppins tw-text-sm tw-mt-1">Servis AC</p>
+            <p class="tw-my-1 tw-px-3 tw-font-poppins tw-text-sm tw-mt-1">{{$item->Layanan['nama_layanan']}}</p>
             <p class="tw-my-1 tw-px-3 tw-font-extrabold tw-font-poppins tw-text-sm tw-mt-1">Keluhan</p>
-            <p class="tw-my-1 tw-px-3 tw-font-poppins tw-text-sm tw-mt-1">AC berisik, tidak dingin</p>
-            <p class="tw-my-1 tw-px-3 tw-font-extrabold tw-font-poppins tw-text-sm tw-mt-1">Waktu</p>
-            <p class="tw-my-1 tw-px-3 tw-font-poppins tw-text-sm tw-mt-1 tw-mb-3">Jumat, 05-03-2021, 13.00 WIB</p>
+            <p class="tw-my-1 tw-px-3 tw-font-poppins tw-text-sm tw-mt-1">{{$item->keluhan}}</p>
         </div>
     </div>
 </div>
 
+<div class="tw-container tw-mx-auto tw-mb-5">
+    <div class="tw-mx-3">
+        <a href="{{url('/syarat-pemesanan/'.$item->id.'')}}" class="tw-w-full tw-px-3 tw-py-2 tw-text-base tw-font-medium tw-text-center tw-text-white tw-bg-orange-400 tw-rounded-lg hover:tw-bg-[#ff7f00] dark:tw-bg-orange-400 dark:hover:tw-bg-[#ff7f00] tw-no-underline">Langkah Selanjutnya</a>
+    </div>
+</div>
+
+@endforeach
 <br>
 <br>
 <br>

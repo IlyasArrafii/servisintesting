@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Transaksi;
 use Illuminate\Http\Request;
 
 class TransaksiController extends Controller
@@ -34,7 +35,7 @@ class TransaksiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // 
     }
 
     /**

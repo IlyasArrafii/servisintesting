@@ -101,7 +101,7 @@
           <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
             <li class="nav-item dropdown">
-              <a href="{{url('/dashboard-admin')}}" class="nav-link"><i class="fa fa-fire"></i><span>Dashboard</span></a>
+              <a href="{{url('/dashboard-admin')}}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
             </li>
             <li class="menu-header">Post</li>
             <li class="nav-item dropdown">
@@ -111,14 +111,14 @@
 
             <li class="menu-header">Transaction</li>
             <li class="nav-item dropdown">
-              <a class="nav-link" href="{{url('/pemesanan')}}"><i class="fa fa-shopping-cart"></i><span>Pemesanan</span></a>
+              <a class="nav-link" href="{{url('/pemesanan')}}"><i class="fas fa-shopping-cart"></i><span>Pemesanan</span></a>
             </li>
 
             <li class="menu-header">Data User</li>
             <li class="nav-item dropdown">
               <a class="nav-link" href="{{url('/konsumen')}}"><i class="fas fa-users"></i><span>Konsumen</span></a>
               <a class="nav-link" href="../penyediajasa/penyediajasa.php"><i class="fas fa-users"></i><span>Penyedia Jasa</span></a>
-              <a class="nav-link" href="../admin/admin.php"><i class="fa fa-user-circle"></i><span>Admin</span></a>
+              <a class="nav-link" href="../admin/admin.php"><i class="fas fa-user-circle"></i><span>Admin</span></a>
             </li>
           </ul>
 

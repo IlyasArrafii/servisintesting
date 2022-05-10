@@ -7,6 +7,7 @@ use App\Models\generateKode;
 use App\Models\Layanan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class LayananController extends Controller
 {
@@ -51,6 +52,8 @@ class LayananController extends Controller
         Layanan::create([
             'kode_layanan' => $request->input('kode'),
             'nama_layanan' => $request->input('nama'),
+            'slug' => Str::slug($request->input('nama')),
+            'syarat' => $request->input('syarat'),
             'icon' => $request->file('icon')->store('image'),
         ]);
         return redirect('/layanan')->with('success', 'Data Berhasil Ditambahkan');
@@ -89,8 +92,7 @@ class LayananController extends Controller
     public function update(Request $request, Layanan $layanan)
     {
         $request->validate([
-            'nama' => 'required',
-            'icon' => 'required',
+            'nama' => 'required'
         ]);
         if ($request->file('icon')) {
             $icon = $request->file('icon')->store('image');
@@ -102,6 +104,8 @@ class LayananController extends Controller
                     ->update([
                         'kode_layanan' => $request->input('kode'),
                         'nama_layanan' => $request->input('nama'),
+                        'slug' => Str::slug($request->input('nama')),
+                        'syarat' => $request->input('syarat'),
                         'icon' => $hasil
                     ]);
             } else {
@@ -110,6 +114,8 @@ class LayananController extends Controller
                     ->update([
                         'kode_layanan' => $request->input('kode'),
                         'nama_layanan' => $request->input('nama'),
+                        'slug' => Str::slug($request->input('nama')),
+                        'syarat' => $request->input('syarat'),
                         'icon' => $hasil
                     ]);
             }
@@ -119,6 +125,8 @@ class LayananController extends Controller
                 ->update([
                     'kode_layanan' => $request->input('kode'),
                     'nama_layanan' => $request->input('nama'),
+                    'slug' => Str::slug($request->input('nama')),
+                    'syarat' => $request->input('syarat'),
                     'icon' => $data->icon
                 ]);
         }

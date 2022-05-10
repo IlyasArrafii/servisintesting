@@ -2,9 +2,10 @@
 
 use App\Http\Controllers\Admin\AnggotaController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\DataPemesananController;
 use App\Http\Controllers\Admin\KonsumenController;
 use App\Http\Controllers\Admin\LayananController;
-use App\Http\Controllers\Admin\PemesananController;
+use App\Http\Controllers\PemesananController;
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,8 +25,12 @@ Route::get('/login', [PagesController::class, 'login']);
 Route::get('/register', [PagesController::class, 'register']);
 Route::get('/pesanan', [PagesController::class, 'pesanan']);
 Route::get('/profil', [PagesController::class, 'profil']);
-Route::get('/transaksi', [PagesController::class, 'transaksi']);
-Route::get('/detail-pemesanan', [PagesController::class, 'pemesanan']);
+Route::get('/pemesanan/{slug}', [PagesController::class, 'pemesanan']);
+Route::post('/pemesanan/tambah', [PemesananController::class, 'store']);
+Route::get('/detail-pemesanan/{id}', [PagesController::class, 'detailpemesanan']);
+Route::get('/syarat-pemesanan/{id}', [PagesController::class, 'syaratpemesanan']);
+Route::get('/batal-pemesanan/{id}', [PagesController::class, 'batalpemesanan']);
+Route::post('/checkout', [PagesController::class, 'checkout']);
 
 
 
@@ -62,8 +67,12 @@ Route::get('/konsumen', [KonsumenController::class, 'index']);
 // Route::get('/kdelete/{id}', [KonsumenController::class, 'destroy']);
 
 // Pemesanan
-Route::get('/pemesanan', [PemesananController::class, 'index']);
-Route::get('/detail-pesanan/{id}', [PemesananController::class, 'create']);
+Route::get('/pemesanan', [DataPemesananController::class, 'index']);
+Route::get('/detail-pesanan/{id}', [DataPemesananController::class, 'create']);
+Route::get('/konfirmasi-pesanan/{id}', [DataPemesananController::class, 'konfirmasi']);
+Route::get('/mencari-teknisi/{id}', [DataPemesananController::class, 'mencariteknisi']);
+Route::get('/teknisi-datang/{id}', [DataPemesananController::class, 'teknisidatang']);
+Route::get('/batal-pesanan/{id}', [DataPemesananController::class, 'batalpesanan']);
 // Route::get('/bukti/{id}', [PemesananController::class, 'bukti']);
 // Route::get('/confirm/{id}', [PemesananController::class, 'confirm']);
 // Route::get('/tolak/{id}', [PemesananController::class, 'tolak']);
