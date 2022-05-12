@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pemesanan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PemesananController extends Controller
 {
@@ -43,6 +44,9 @@ class PemesananController extends Controller
             'kota' => 'required',
             'keluhan' => 'required',
         ]);
+        $id_user = Auth::user()->id;
+        Pemesanan::where('status', '0')->where('id_user', $id_user)->delete();
+
         Pemesanan::create([
             'kode_pemesanan' => $request->input('kode'),
             'kode_layanan' => $request->input('kode_layanan'),
@@ -56,6 +60,7 @@ class PemesananController extends Controller
             'keluhan' => $request->input('keluhan'),
             'status' => '0',
         ]);
+
         $id = substr($request->input('kode'), 19, 5);
         return redirect('/detail-pemesanan/' . $id . '');
     }

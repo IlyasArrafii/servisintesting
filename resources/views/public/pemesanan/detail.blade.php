@@ -18,6 +18,7 @@
     </div>
 </div>
 @foreach($pemesanan as $item)
+@if($item->status == 0)
 <div class="tw-container tw-mx-auto tw-mt-5">
     <div class="tw-mx-3">
         <div class="tw-border-[#fff] tw-bg-[#fff] tw-rounded-xl tw-border tw-mt-1">
@@ -47,11 +48,11 @@
 </div>
 
 <div class="tw-container tw-mx-auto tw-mb-5">
-    <div class="tw-mx-3">
-        <a href="{{url('/syarat-pemesanan/'.$item->id.'')}}" class="tw-w-full tw-px-3 tw-py-2 tw-text-base tw-font-medium tw-text-center tw-text-white tw-bg-orange-400 tw-rounded-lg hover:tw-bg-[#ff7f00] dark:tw-bg-orange-400 dark:hover:tw-bg-[#ff7f00] tw-no-underline">Langkah Selanjutnya</a>
+    <div class="tw-mx-3 tw-w-full">
+        <a href="{{url('/syarat-pemesanan/'.$item->id.'')}}" class="tw-w-full tw-px-3 tw-py-2 tw-text-base tw-font-medium tw-text-center tw-text-white tw-bg-orange-400 tw-rounded-lg hover:tw-bg-[#ff7f00] dark:tw-bg-orange-400 dark:hover:tw-bg-[#ff7f00]">Langkah Selanjutnya</a>
     </div>
 </div>
-
+@endif
 @endforeach
 <br>
 <br>

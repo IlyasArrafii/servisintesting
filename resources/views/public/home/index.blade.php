@@ -51,6 +51,7 @@
 	<div class="tw-container tw-mx-auto">
 		<div class="tw-grid tw-grid-cols-4 tw-mx-1 tw-content-center">
 			@foreach($layanan as $item)
+			@if(isset(Auth::user()->id))
 			<div class="tw-mx-2 tw-mb-2 tw-mt-3">
 				<a href="{{url('/pemesanan/'.$item->slug.'')}}">
 					<div class="tw-border tw-rounded-lg tw-border-[#fff] tw-bg-[#fff]">
@@ -59,6 +60,16 @@
 					</div>
 				</a>
 			</div>
+			@else
+			<div class="tw-mx-2 tw-mb-2 tw-mt-3">
+				<a href="{{url('/login')}}">
+					<div class="tw-border tw-rounded-lg tw-border-[#fff] tw-bg-[#fff]">
+						<img src="{{ asset('storage/'.$item->icon.'')}}" class="tw-mx-auto tw-pt-2 tw-mb-1" style="width: 44px;">
+						<p class="tw-text-sm tw-text-center tw-text-poppins tw-mb-1">{{$item->nama_layanan}}</p>
+					</div>
+				</a>
+			</div>
+			@endif
 			@endforeach
 		</div>
 
@@ -103,17 +114,23 @@
 <!-- INFO DAN PROMO  -->
 
 <div class="tw-container tw-mx-auto tw-my-3">
-	<div class="tw-columns-2 tw-my-auto tw-mx-auto tw-text-xs tw-text-center">
-		<div class="tw-p-3">
-			<div class="tw-border tw-rounded-lg tw-border-[#fff] tw-bg-[#fff]">
-				<p class="tw-my-1 tw-mx-1">Cara Memesan Layanan Suvis</p>
-				<img src="assets/img/icon/information.png" class="tw-mx-auto tw-py-2" style="width: 70px;">
+	<div class="tw-flex tw-flex-wrap tw-my-auto tw-mx-auto tw-text-xs tw-text-center">
+		<div class="tw-flex tw-gap-1">
+			<div class="tw-mx-3">
+				<div class="tw-border tw-rounded-lg tw-border-[#fff] tw-bg-[#fff]">
+					<p class="tw-my-1 tw-mx-1 tw-text-xs">Cara Memesan Layanan Servisin</p>
+					<a href="{{url('/cara-pemesanan')}}">
+						<img src="assets/img/icon/information.png" class="tw-mx-auto tw-py-2" style="width: 70px;">
+					</a>
+				</div>
 			</div>
-		</div>
-		<div class="tw-p-3">
-			<div class="tw-border tw-rounded-lg tw-border-[#fff] tw-bg-[#fff]">
-				<p class="tw-my-1 tw-mx-1">Apa Keunggulan Suvis Indonesia ?</p>
-				<img src="assets/img/icon/excellence.png" class="tw-mx-auto tw-py-2" style="width: 70px;">
+			<div class="tw-mx-3">
+				<div class="tw-border tw-rounded-lg tw-border-[#fff] tw-bg-[#fff]">
+					<p class="tw-my-1 tw-mx-5 tw-text-xs">Apa Keunggulan Servisin ?</p>
+					<a href="{{url('/keunggulan')}}">
+						<img src="assets/img/icon/excellence.png" class="tw-mx-auto tw-py-2" style="width: 70px;">
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -138,15 +155,15 @@
 		<div class="tw-mx-3 tw-flex-1 tw-mb-3">
 			<div class="tw-border tw-rounded-lg tw-border-[#fff] tw-bg-[#fff]">
 				<img src="assets/img/icon1/teknisi.png" class="tw-mx-auto tw-py-2 tw-mb-2" style="width: 70px;">
-				<p class="tw-my-1 tw-text-lg tw-font-bold tw-mx-1">20</p>
+				<p class="tw-my-1 tw-text-xl tw-font-bold tw-mx-1">10+</p>
 				<p class="tw-mt-1 tw-mb-2 tw-font-bold tw-mx-1">Penyedia Jasa</p>
 			</div>
 		</div>
 		<div class="tw-mx-3 tw-flex-1 tw-mb-3">
 			<div class="tw-border tw-rounded-lg tw-border-[#fff] tw-bg-[#fff]">
 				<img src="assets/img/icon1/setting.png" class="tw-mx-auto tw-py-2 tw-mb-2" style="width: 70px;">
-				<p class="tw-my-1 tw-text-lg tw-font-bold tw-mx-1">20</p>
-				<p class="tw-mt-1 tw-mb-2 tw-font-bold tw-mx-1">Penyedia Jasa</p>
+				<p class="tw-my-1 tw-text-xl tw-font-bold tw-mx-1">3</p>
+				<p class="tw-mt-1 tw-mb-2 tw-font-bold tw-mx-1">Layanan</p>
 			</div>
 		</div>
 	</div>

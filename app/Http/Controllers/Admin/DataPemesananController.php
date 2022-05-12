@@ -60,21 +60,34 @@ class DataPemesananController extends Controller
         $pemesanan = Pemesanan::where('id', $id)->update([
             'status' => '3'
         ]);
-        return redirect('/pemesanan');
+        return redirect('/admin-pemesanan');
     }
     public function teknisidatang($id)
     {
         $pemesanan = Pemesanan::where('id', $id)->update([
             'status' => '4'
         ]);
-        return redirect('/pemesanan');
+        return redirect('/admin-pemesanan');
     }
     public function batalpesanan($id)
     {
         $pemesanan = Pemesanan::where('id', $id)->delete();
-        return redirect('/pemesanan');
+        return redirect('/admin-pemesanan');
     }
-
+    public function selesai($id)
+    {
+        $pemesanan = Pemesanan::where('id', $id)->update([
+            'status' => '5'
+        ]);
+        return redirect('/admin-pemesanan');
+    }
+    public function komplainselesai($id)
+    {
+        $pemesanan = Pemesanan::where('id', $id)->update([
+            'status' => '7'
+        ]);
+        return redirect('/admin-pemesanan');
+    }
     /**
      * Show the form for creating a new resource.
      *

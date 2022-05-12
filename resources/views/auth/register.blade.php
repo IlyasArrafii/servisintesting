@@ -23,7 +23,7 @@
                             <x-input id="email" class="tw-w-full tw-rounded tw-px-3 tw-border tw-border-gray-500 tw-pt-2 tw-pb-2 focus:tw-outline-none input active:tw-outline-none tw-block" type="email" name="email" :value="old('email')" required placeholder="Email" />
                         </div>
                         <div class="form-group tw-w-full input">
-                            <x-input id="password" class="tw-w-full tw-rounded tw-px-3 tw-border tw-border-gray-500 tw-pt-2 tw-pb-2 focus:tw-outline-none input active:tw-outline-none tw-block" type="password" name="password" required autocomplete="new-password" placeholder="Password" />
+                            <x-input id="password" class="tw-w-full tw-rounded tw-px-3 tw-border tw-border-gray-500 tw-pt-2 tw-pb-2 focus:tw-outline-none input active:tw-outline-none tw-block" type="password" name="password" required autocomplete="new-password" placeholder="Password Minimal 8 Karakter" />
 
                             @error('password')
                             <span class="invalid-feedback" role="alert">

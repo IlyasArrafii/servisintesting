@@ -111,7 +111,7 @@
 
             <li class="menu-header">Transaction</li>
             <li class="nav-item dropdown">
-              <a class="nav-link" href="{{url('/pemesanan')}}"><i class="fas fa-shopping-cart"></i><span>Pemesanan</span></a>
+              <a class="nav-link" href="{{url('/admin-pemesanan')}}"><i class="fas fa-shopping-cart"></i><span>Pemesanan</span></a>
             </li>
 
             <li class="menu-header">Data User</li>
@@ -119,6 +119,12 @@
               <a class="nav-link" href="{{url('/konsumen')}}"><i class="fas fa-users"></i><span>Konsumen</span></a>
               <a class="nav-link" href="../penyediajasa/penyediajasa.php"><i class="fas fa-users"></i><span>Penyedia Jasa</span></a>
               <a class="nav-link" href="../admin/admin.php"><i class="fas fa-user-circle"></i><span>Admin</span></a>
+            </li>
+            <li class="menu-header">Control</li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="{{url('/admin-kebijakan')}}"><i class="fas fa-users"></i><span>Kebijakan Privasi</span></a>
+              <a class="nav-link" href="{{url('/konsumen')}}"><i class="fas fa-users"></i><span>Syarat & Ketentuan</span></a>
+              <a class="nav-link" href="{{url('/konsumen')}}"><i class="fas fa-users"></i><span>Cara Memesan</span></a>
             </li>
           </ul>
 

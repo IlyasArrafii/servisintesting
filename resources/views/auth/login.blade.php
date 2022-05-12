@@ -33,11 +33,11 @@
 
                 <div class="tw-text-center tw-mb-32 tw-mt-5">
                     <p class="text-center">Belum Punya Akun? <a class="tw-text-sm tw-text-poppins hover:tw-text-gray-900" href="{{url('/register')}}">Daftar Disini</a></p>
-                    @if (Route::has('password.request'))
+                    <!-- @if (Route::has('password.request'))
                     <a class="tw-underline tw-text-center tw-text-sm tw-text-poppins tw-text-gray-600 hover:tw-text-gray-900" href="{{ route('password.request') }}">
                         {{ __('Lupa Password?') }}
                     </a>
-                    @endif
+                    @endif -->
                 </div>
             </div>
         </div>

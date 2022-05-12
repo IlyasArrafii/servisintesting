@@ -12,50 +12,70 @@
         </div>
         <div class="tw-text-center tw-mx-auto tw-mr-[40%] md:tw-mx-auto md:tw-mr-[48%] md:tw-text-center">
             <div class="tw-text-center tw-mx-auto">
-                <span class="tw-m-auto tw-text-center tw-text-white tw-font-poppins">Pesanan</span>
+                <span class="tw-m-auto tw-text-center tw-text-white tw-font-poppins pages">Pesanan</span>
             </div>
         </div>
     </div>
 </div>
 
 <div class="tw-container tw-mx-auto tw-mt-5">
-    <div class="tw-text-center">
+    <div class="tw-text-center tw-max-w-full">
         <span class="tw-mx-auto tw-text-center tw-font-poppins tw-font-bold">Data Pesanan</span>
     </div>
     @foreach($detaildata as $item)
-    <div class="tw-p-3">
-        <div class="tw-border-[#fff] tw-bg-[#fff] tw-rounded-xl tw-border tw-mt-1 tw tw-flex">
-            <p class="tw-my-1 tw-px-1 tw-p-3 tw-font-poppins tw-text-sm tw-flex-1">{{$item->kode_pemesanan}}</p>
-            @if($item->status == '1')
-            <div class="tw-mt-2">
-                <p class="tw-my-1 tw-px-3 tw-p-1 tw-text-xs tw-text-red-500 tw-font-poppins tw-border-[#FFF0B3] tw-rounded-xl tw-mr-1 tw-bg-[#FFF0B3]">Menunggu Konfirmasi</p>
-            </div>
-            @elseif($item->status == '2')
-            <div class="tw-mt-2">
-                <p class="tw-my-1 tw-px-3 tw-p-1 tw-text-xs tw-text-blue-500 tw-font-poppins tw-border-[#FFF0B3] tw-rounded-xl tw-mr-1 tw-bg-[#FFF0B3]">Konfirmasi Diterima</p>
-            </div>
-            @elseif($item->status == '3')
-            <div class="tw-mt-2">
-                <p class="tw-my-1 tw-px-3 tw-p-1 tw-text-xs tw-text-[#FA592B] tw-font-poppins tw-border-[#FFF0B3] tw-rounded-xl tw-mr-1 tw-bg-[#FFF0B3]">Mencari Teknisi</p>
-            </div>
-            @elseif($item->status == '4')
-            <div class="tw-mt-2">
-                <p class="tw-my-1 tw-px-3 tw-p-1 tw-text-xs tw-text-green-500 tw-font-poppins tw-border-[#FFF0B3] tw-rounded-xl tw-mr-1 tw-bg-[#FFF0B3]">Teknisi Datang</p>
-            </div>
-            @endif
+    @if($item->status < 1) <div class="tw-text-center tw-mt-5">
+        <span class="tw-mx-auto tw-text-center tw-font-poppins tw-text-base">{{$text}}</span>
+</div>
+@endif
+@if($item->status > 0)
+
+
+<div class="tw-p-3">
+    <div class="tw-border-[#fff] tw-bg-[#fff] tw-rounded-xl tw-border tw-mt-1 tw tw-flex">
+        <p class="tw-my-1 tw-px-1 tw-p-3 tw-font-poppins tw-text-sm tw-flex-1">{{$item->kode_pemesanan}}</p>
+        @if($item->status == '1')
+        <div class="tw-mt-2">
+            <p class="tw-my-1 tw-px-3 tw-p-1 tw-text-xs tw-text-red-500 tw-font-poppins tw-border-[#FFF0B3] tw-rounded-xl tw-mr-1 tw-bg-[#FFF0B3]">Menunggu Konfirmasi</p>
         </div>
-    </div>
-    <div class="tw-mx-3">
-        <div class="tw-border-[#fff] tw-bg-[#fff] tw-rounded-xl tw-border tw-mt-1 tw-shadow-md">
-            <p class="tw-my-1 tw-px-3 tw-pt-3 tw-font-extrabold tw-font-poppins tw-text-sm">Data Pemesanan</p>
-            <p class="tw-my-1 tw-px-3 tw-pt-3 tw-font-extrabold tw-font-poppins tw-text-sm">Nama Pesanan</p>
-            <p class="tw-my-1 tw-px-3 tw-font-poppins tw-text-sm tw-mt-1">{{$item->name}}</p>
-            <p class="tw-my-1 tw-px-3 tw-font-extrabold tw-font-poppins tw-text-sm tw-mt-1">Alamat Pemesan</p>
-            <p class="tw-my-1 tw-px-3 tw-font-poppins tw-text-sm tw-mt-1">{{$item->alamat}}</p>
-            <p class="tw-my-1 tw-px-3 tw-font-extrabold tw-font-poppins tw-text-sm tw-mt-1">Nomor Telepon</p>
-            <p class="tw-my-1 tw-px-3 tw-font-poppins tw-text-sm tw-mt-1 tw-mb-3">{{$item->notelpon}}</p>
+        @elseif($item->status == '2')
+        <div class="tw-mt-2">
+            <p class="tw-my-1 tw-px-3 tw-p-1 tw-text-xs tw-text-blue-500 tw-font-poppins tw-border-[#FFF0B3] tw-rounded-xl tw-mr-1 tw-bg-[#FFF0B3]">Konfirmasi Diterima</p>
         </div>
+        @elseif($item->status == '3')
+        <div class="tw-mt-2">
+            <p class="tw-my-1 tw-px-3 tw-p-1 tw-text-xs tw-text-[#FA592B] tw-font-poppins tw-border-[#FFF0B3] tw-rounded-xl tw-mr-1 tw-bg-[#FFF0B3]">Mencari Teknisi</p>
+        </div>
+        @elseif($item->status == '4')
+        <div class="tw-mt-2">
+            <p class="tw-my-1 tw-px-3 tw-p-1 tw-text-xs tw-text-green-500 tw-font-poppins tw-border-[#FFF0B3] tw-rounded-xl tw-mr-1 tw-bg-[#FFF0B3]">Teknisi Datang</p>
+        </div>
+        @elseif($item->status == '5')
+        <div class="tw-mt-2">
+            <p class="tw-my-1 tw-px-3 tw-p-1 tw-text-xs tw-text-green-500 tw-font-poppins tw-border-[#FFF0B3] tw-rounded-xl tw-mr-1 tw-bg-[#FFF0B3]">Pesanan Selesai</p>
+        </div>
+        @elseif($item->status == '6')
+        <div class="tw-mt-2">
+            <p class="tw-my-1 tw-px-3 tw-p-1 tw-text-xs tw-text-red-500 tw-font-poppins tw-border-[#FFF0B3] tw-rounded-xl tw-mr-1 tw-bg-[#FFF0B3]">Pesanan Dikomplain</p>
+        </div>
+        @elseif($item->status == '7')
+        <div class="tw-mt-2">
+            <p class="tw-my-1 tw-px-3 tw-p-1 tw-text-xs tw-text-green-500 tw-font-poppins tw-border-[#FFF0B3] tw-rounded-xl tw-mr-1 tw-bg-[#FFF0B3]">Komplain Selesai</p>
+        </div>
+        @endif
     </div>
+</div>
+<div class="tw-mx-3">
+    <div class="tw-border-[#fff] tw-bg-[#fff] tw-rounded-xl tw-border tw-mt-1 tw-shadow-md">
+        <p class="tw-my-1 tw-px-3 tw-pt-3 tw-font-extrabold tw-font-poppins tw-text-sm">Data Pemesanan</p>
+        <p class="tw-my-1 tw-px-3 tw-pt-3 tw-font-extrabold tw-font-poppins tw-text-sm">Nama Pesanan</p>
+        <p class="tw-my-1 tw-px-3 tw-font-poppins tw-text-sm tw-mt-1">{{$item->name}}</p>
+        <p class="tw-my-1 tw-px-3 tw-font-extrabold tw-font-poppins tw-text-sm tw-mt-1">Alamat Pemesan</p>
+        <p class="tw-my-1 tw-px-3 tw-font-poppins tw-text-sm tw-mt-1">{{$item->alamat}}</p>
+        <p class="tw-my-1 tw-px-3 tw-font-extrabold tw-font-poppins tw-text-sm tw-mt-1">Nomor Telepon</p>
+        <p class="tw-my-1 tw-px-3 tw-font-poppins tw-text-sm tw-mt-1 tw-mb-3">{{$item->notelpon}}</p>
+    </div>
+</div>
+
 </div>
 
 <div class="tw-container tw-mx-auto">
@@ -66,9 +86,19 @@
             <p class="tw-my-1 tw-px-3 tw-font-poppins tw-text-sm tw-mt-1">{{$item->Layanan['nama_layanan']}}</p>
             <p class="tw-my-1 tw-px-3 tw-font-extrabold tw-font-poppins tw-text-sm tw-mt-1">Keluhan</p>
             <p class="tw-mb-3 tw-px-3 tw-font-poppins tw-text-sm tw-mt-1">{{$item->keluhan}}</p>
+            @if($item->status == 5)
+            <div class="tw-container tw-mx-auto tw-mt-1 tw-mb-3">
+                <div class="tw-mx-3">
+                    <a href="{{url('/komplain/'.$item->id.'')}}" class="tw-no-underline tw-text-white">
+                        <button type="submit" class="tw-w-full tw-px-3 tw-py-2 tw-text-base tw-font-medium tw-text-center tw-text-white tw-bg-orange-400 tw-rounded-lg" target="_blank">Ajukan Complain</button>
+                    </a>
+                </div>
+            </div>
+            @endif
         </div>
     </div>
 </div>
+@endif
 @endforeach
 <br>
 <br>

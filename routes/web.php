@@ -31,6 +31,11 @@ Route::get('/detail-pemesanan/{id}', [PagesController::class, 'detailpemesanan']
 Route::get('/syarat-pemesanan/{id}', [PagesController::class, 'syaratpemesanan']);
 Route::get('/batal-pemesanan/{id}', [PagesController::class, 'batalpemesanan']);
 Route::post('/checkout', [PagesController::class, 'checkout']);
+Route::get('/kebijakan-privasi', [PagesController::class, 'kebijakan']);
+Route::get('/cara-pemesanan', [PagesController::class, 'caramemesan']);
+Route::get('/komplain/{id}', [PagesController::class, 'komplain']);
+Route::post('/kirim-komplain', [PagesController::class, 'kirimkomplain']);
+Route::get('/keunggulan', [PagesController::class, 'keunggulan']);
 
 
 
@@ -67,12 +72,14 @@ Route::get('/konsumen', [KonsumenController::class, 'index']);
 // Route::get('/kdelete/{id}', [KonsumenController::class, 'destroy']);
 
 // Pemesanan
-Route::get('/pemesanan', [DataPemesananController::class, 'index']);
+Route::get('/admin-pemesanan', [DataPemesananController::class, 'index']);
 Route::get('/detail-pesanan/{id}', [DataPemesananController::class, 'create']);
 Route::get('/konfirmasi-pesanan/{id}', [DataPemesananController::class, 'konfirmasi']);
 Route::get('/mencari-teknisi/{id}', [DataPemesananController::class, 'mencariteknisi']);
 Route::get('/teknisi-datang/{id}', [DataPemesananController::class, 'teknisidatang']);
 Route::get('/batal-pesanan/{id}', [DataPemesananController::class, 'batalpesanan']);
+Route::get('/pesanan-selesai/{id}', [DataPemesananController::class, 'selesai']);
+Route::get('/komplain-selesai/{id}', [DataPemesananController::class, 'komplainselesai']);
 // Route::get('/bukti/{id}', [PemesananController::class, 'bukti']);
 // Route::get('/confirm/{id}', [PemesananController::class, 'confirm']);
 // Route::get('/tolak/{id}', [PemesananController::class, 'tolak']);

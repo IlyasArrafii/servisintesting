@@ -20,7 +20,7 @@
 						</tr>
 					</thead>
 					@foreach($pemesanan as $item)
-					@if($item->status == 1 OR $item->status == 2 OR $item->status == 3 OR $item->status == 4)
+					@if($item->status == 1 OR $item->status == 2 OR $item->status == 3 OR $item->status == 4 OR $item->status == 5 OR $item->status == 6 OR $item->status == 7)
 					<tbody>
 						<tr>
 							<td>{{$item->kode_pemesanan}}</td>
@@ -33,6 +33,10 @@
 								<a href="{{url('/mencari-teknisi/'.$item->id.'')}}" class="btn btn-warning">Mencari Teknisi</a>
 								@elseif($item->status == 3)
 								<a href="{{url('/teknisi-datang/'.$item->id.'')}}" class="btn btn-success">Teknisi Datang</a>
+								@elseif($item->status == 4)
+								<a href="{{url('/pesanan-selesai/'.$item->id.'')}}" class="btn btn-success">Pesanan Selesai</a>
+								@elseif($item->status == 6)
+								<a href="{{url('/komplain-selesai/'.$item->id.'')}}" class="btn btn-success">Komplain Selesai</a>
 								@endif
 								<a href="{{url('/detail-pesanan/'.$item->id.'')}}" class="btn btn-secondary">Detail Pesanan</a>
 								<a href="{{url('/batal-pesanan/'.$item->id.'')}}" class="btn btn-danger">Batalkan Pesanan</a>
