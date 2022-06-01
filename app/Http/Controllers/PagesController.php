@@ -9,6 +9,7 @@ use App\Models\Pemesanan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use DB;
+use Illuminate\Support\Carbon;
 
 class PagesController extends Controller
 {
@@ -16,7 +17,8 @@ class PagesController extends Controller
     public function index()
     {
         $layanan = Layanan::all();
-        return view('public.home.index', compact('layanan'));
+        $today = Carbon::now()->isoFormat('dddd, D MMMM Y');
+        return view('public.home.index', compact('layanan', 'today'));
     }
     public function login()
     {

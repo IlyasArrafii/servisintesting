@@ -6,7 +6,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-8 justify-content-left">
-				<p class="text-suvis">Servisin<br> <span class="text-tanggal">Selasa 3 Maret 2021</span></p>
+				<p class="text-suvis">Servisin<br> <span class="text-tanggal">{{$today}}</span></p>
 				@if(isset(Auth::user()->name))
 				<p class="tw-text-sm tw-text-white">Hi, {{ Auth::user()->name }}!</p>
 				@endif
@@ -236,5 +236,18 @@
 		</div>
 	</div>
 </div>
+<script>
+	var tw = new Date();
+	if (tw.getTimezoneOffset() == 0)(a = tw.getTime() + (7 * 60 * 60 * 1000))
+	else(a = tw.getTime());
+	tw.setTime(a);
+	var tahun = tw.getFullYear();
+	var hari = tw.getDay();
+	var bulan = tw.getMonth();
+	var tanggal = tw.getDate();
+	var hariarray = new Array("Minggu,", "Senin,", "Selasa,", "Rabu,", "Kamis,", "Jum'at,", "Sabtu,");
+	var bulanarray = new Array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "Nopember", "Desember");
+	document.getElementById("tanggalwaktu").innerHTML = hariarray[hari] + " " + tanggal + " " + bulanarray[bulan] + " " + tahun;
+</script>
 <!-- AKHIR PENDAFATARAN -->
 @include('public.home.footer')
