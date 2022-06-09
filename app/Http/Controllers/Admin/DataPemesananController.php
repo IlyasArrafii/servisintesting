@@ -16,7 +16,8 @@ class DataPemesananController extends Controller
     public function index()
     {
         $pemesanan = Pemesanan::all();
-        return view('admin.pemesanan.pemesanan', compact('pemesanan'));
+        $count = Pemesanan::all()->count();
+        return view('admin.pemesanan.index', compact('pemesanan', 'count'));
     }
     public function konfirmasi($id)
     {

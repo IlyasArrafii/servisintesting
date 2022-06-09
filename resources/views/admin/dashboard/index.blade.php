@@ -27,76 +27,66 @@
     <div class="container-fluid">
       <!-- Small boxes (Stat box) -->
       <div class="row">
-        <!-- ./col -->
-        <div class="col-md-3">
-          <!-- small box -->
-          <div class="small-box bg-info">
-            <div class="inner">
-              <h3>{{$konsumen}}</h3>
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="info-box">
+            <span class="info-box-icon bg-info elevation-1"><i class="fa-regular fa-circle-user"></i></span>
 
-              <p>Konsumen</p>
+            <div class="info-box-content">
+              <span class="info-box-text">Konsumen</span>
+              <span class="info-box-number">
+                {{$konsumen}}
+              </span>
             </div>
-            <div class="icon">
-              <i class="fa-regular fa-user"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <!-- /.info-box-content -->
           </div>
-          <div class="small-box bg-info">
-            <div class="inner">
-              <h3></h3>
-
-              <p>Konsumen</p>
-            </div>
-            <a href="#" class="small-box-footer"><i class="fas fa-arrow-circle-none"></i></a>
-          </div>
-
-          <div class="small-box bg-danger">
-            <div class="inner">
-              <h3></h3>
-
-              <p>Total Transaksi Belum Dibayar</p>
-            </div>
-            <a href="#" class="small-box-footer"><i class="fas fa-arrow-circle-none"></i></a>
-          </div>
+          <!-- /.info-box -->
         </div>
-        <div class="col-lg-3 col-3">
-          <!-- small box -->
-          <div class="small-box bg-warning">
-            <div class="inner">
-              <h3></h3>
+        <!-- /.col -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="info-box mb-3">
+            <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
 
-              <p style="font-size: 11.3pt;">Total Transaksi Menunggu Konfirmasi</p>
+            <div class="info-box-content">
+              <span class="info-box-text">Penyedia Jasa</span>
+              <span class="info-box-number">41,410</span>
             </div>
-            <a href="#" class="small-box-footer"><i class="fas fa-arrow-circle-none"></i></a>
+            <!-- /.info-box-content -->
           </div>
-          <div class="small-box bg-danger">
-            <div class="inner">
-              <h3></h3>
-
-              <p>Total Transaksi Ditolak</p>
-            </div>
-            <a href="#" class="small-box-footer"><i class="fas fa-arrow-circle-none"></i></a>
-          </div>
+          <!-- /.info-box -->
         </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-3">
-          <!-- small box -->
-          <div class="small-box bg-success">
-            <div class="inner">
+        <!-- /.col -->
 
+        <!-- fix for small devices only -->
+        <div class="clearfix hidden-md-up"></div>
 
-              <p>Laporan Pendapatan</p>
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="info-box mb-3">
+            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Pemesanan</span>
+              <span class="info-box-number">760</span>
             </div>
-            <a href="#" class="small-box-footer"><i class="fas fa-arrow-circle-none"></i></a>
+            <!-- /.info-box-content -->
           </div>
+          <!-- /.info-box -->
         </div>
+        <!-- /.col -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="info-box mb-3">
+            <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Artikel</span>
+              <span class="info-box-number">2,000</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
       </div>
       <!-- /.row -->
-      <div class="row">
-        <div class="col-lg-7">
-
-        </div>
-      </div>
       <!-- Main row -->
       <div class="row">
         <div class="col-lg-7">
