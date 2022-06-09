@@ -16,7 +16,7 @@ class KonsumenController extends Controller
     public function index()
     {
         $konsumen = Konsumen::all();
-        return view('admin.konsumen.konsumen', compact('konsumen'));
+        return view('admin.konsumen.index', compact('konsumen'));
     }
 
     /**

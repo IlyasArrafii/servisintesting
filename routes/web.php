@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\KonsumenController;
 use App\Http\Controllers\Admin\LayananController;
 use App\Http\Controllers\PemesananController;
 use App\Http\Controllers\PagesController;
+use App\Http\Middleware\AlreadyLoginAdmin;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,15 +48,16 @@ Route::get('/keunggulan', [PagesController::class, 'keunggulan']);
 
 //====================================================================
 // Admin
-
+Route::middleware(['admin'])->group(function () {
+});
 // Route Back End
-Route::get('/dashboard-admin', [DashboardController::class, 'index']);
+Route::get('/admin/dashboard', [DashboardController::class, 'index']);
 
 // Layanan
-Route::get('/layanan', [LayananController::class, 'index']);
-Route::get('/layanan/tambah', [LayananController::class, 'create']);
-Route::post('/layanan/tambah', [LayananController::class, 'store']);
-Route::get('/layanan/{id}', [LayananController::class, 'edit']);
+Route::get('/admin/layanan', [LayananController::class, 'index']);
+Route::get('/admin/layanan/tambah', [LayananController::class, 'create']);
+Route::post('/admin/layanan/tambah', [LayananController::class, 'store']);
+Route::get('/admin/layanan/{id}', [LayananController::class, 'edit']);
 Route::post('/layanan/update', [LayananController::class, 'update']);
 Route::delete('/layanan/{id}', [LayananController::class, 'destroy']);
 

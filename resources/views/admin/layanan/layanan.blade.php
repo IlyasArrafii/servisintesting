@@ -1,4 +1,6 @@
-@include('admin.layout.header')
+@extends('admin.layout.main')
+@section('judul', 'Layanan')
+@section('content')
 
 <div class="main-content">
   <section class="section">
