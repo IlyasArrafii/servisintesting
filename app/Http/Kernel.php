@@ -45,10 +45,6 @@ class Kernel extends HttpKernel
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
-
-        'admin' => [
-            \Illuminate\Routing\Middleware\LoginAdmin::class,
-        ]
     ];
 
     /**
@@ -68,5 +64,8 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+
+        'LoginAdmin' => \App\Http\Middleware\LoginAdminCheck::class,
+        'AlreadyLoginAdmin' => \App\Http\Middleware\AlreadyLoginAdmin::class,
     ];
 }

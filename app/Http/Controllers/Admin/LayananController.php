@@ -19,7 +19,7 @@ class LayananController extends Controller
     public function index()
     {
         $layanan = Layanan::all();
-        return view('admin.layanan.layanan', compact('layanan'));
+        return view('admin.layanan.index', compact('layanan'));
     }
 
     /**
@@ -34,7 +34,7 @@ class LayananController extends Controller
 
         //DB Layanan
         $layanan = Layanan::All();
-        return view('admin.layanan.addlayanan', compact('kode', 'layanan'));
+        return view('admin.layanan.add', compact('kode', 'layanan'));
     }
 
     /**
@@ -56,7 +56,7 @@ class LayananController extends Controller
             'syarat' => $request->input('syarat'),
             'icon' => $request->file('icon')->store('image'),
         ]);
-        return redirect('/layanan')->with('success', 'Data Berhasil Ditambahkan');
+        return redirect('/admin/layanan')->with('success', 'Data Berhasil Ditambahkan');
     }
 
     /**
@@ -79,7 +79,7 @@ class LayananController extends Controller
     public function edit($id)
     {
         $layanan = Layanan::where('id', $id)->get();
-        return view('admin.layanan.editlayanan', compact('layanan'));
+        return view('admin.layanan.edit', compact('layanan'));
     }
 
     /**
@@ -130,7 +130,7 @@ class LayananController extends Controller
                     'icon' => $data->icon
                 ]);
         }
-        return redirect('/layanan')->with('warning', 'Data Berhasil Di Update');
+        return redirect('/admin/layanan')->with('warning', 'Data Berhasil Di Update');
     }
 
     /**
@@ -145,6 +145,6 @@ class LayananController extends Controller
             Storage::delete($layanan->icon);
         }
         Layanan::where('id', $id)->delete();
-        return redirect('/layanan')->with('Danger', 'Data Berhasil Dihapus');
+        return redirect('/admin/layanan')->with('Danger', 'Data Berhasil Dihapus');
     }
 }

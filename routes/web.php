@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DataPemesananController;
 use App\Http\Controllers\Admin\KonsumenController;
 use App\Http\Controllers\Admin\LayananController;
+use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\PemesananController;
 use App\Http\Controllers\PagesController;
 use App\Http\Middleware\AlreadyLoginAdmin;
@@ -48,45 +49,60 @@ Route::get('/keunggulan', [PagesController::class, 'keunggulan']);
 
 //====================================================================
 // Admin
-Route::middleware(['admin'])->group(function () {
-});
+
+// Login
+Route::get('/admin', [LoginController::class, 'index'])->middleware('AlreadyLoginAdmin');
+Route::post('/admin/login', [LoginController::class, 'PostAdminLogin'])->name('admin.login.post');
+
 // Route Back End
-Route::get('/admin/dashboard', [DashboardController::class, 'index']);
+Route::middleware(['LoginAdmin'])->name('admin.')->group(function () {
+    //Dashboard
+    Route::get('/admin/dashboard', [DashboardController::class, 'index']);
 
-// Layanan
-Route::get('/admin/layanan', [LayananController::class, 'index']);
-Route::get('/admin/layanan/tambah', [LayananController::class, 'create']);
-Route::post('/admin/layanan/tambah', [LayananController::class, 'store']);
-Route::get('/admin/layanan/{id}', [LayananController::class, 'edit']);
-Route::post('/layanan/update', [LayananController::class, 'update']);
-Route::delete('/layanan/{id}', [LayananController::class, 'destroy']);
+    // Logout
+    Route::get('/logout', [LoginController::class, 'LogoutAdmin']);
 
-// Anggota
-// Route::get('/anggota/tambah', [AnggotaController::class, 'create']);
-// Route::post('/anggota/tambah', [AnggotaController::class, 'store']);
-// Route::get('/adelete/{id}', [AnggotaController::class, 'destroy']);
-// Route::get('/anggota/{id}', [AnggotaController::class, 'edit']);
-// Route::post('/anggota/edit', [AnggotaController::class, 'update']);
+    // Route Layanan
+    Route::get('/admin/layanan', [LayananController::class, 'index']);
+    Route::get('/admin/layanan/tambah', [LayananController::class, 'create']);
+    Route::post('/admin/layanan/tambah', [LayananController::class, 'store']);
+    Route::get('/admin/layanan/{id}', [LayananController::class, 'edit']);
+    Route::post('/admin/layanan/update', [LayananController::class, 'update']);
+    Route::delete('/admin/layanan/{id}', [LayananController::class, 'destroy']);
 
-// Konsumen
-Route::get('/konsumen', [KonsumenController::class, 'index']);
-// Route::get('/konsumen', [KonsumenController::class, 'index']);
-// Route::get('/kdelete/{id}', [KonsumenController::class, 'destroy']);
+    // Anggota
+    // Route::get('/anggota/tambah', [AnggotaController::class, 'create']);
+    // Route::post('/anggota/tambah', [AnggotaController::class, 'store']);
+    // Route::get('/adelete/{id}', [AnggotaController::class, 'destroy']);
+    // Route::get('/anggota/{id}', [AnggotaController::class, 'edit']);
+    // Route::post('/anggota/edit', [AnggotaController::class, 'update']);
 
-// Pemesanan
-Route::get('/admin-pemesanan', [DataPemesananController::class, 'index']);
-Route::get('/detail-pesanan/{id}', [DataPemesananController::class, 'create']);
-Route::get('/konfirmasi-pesanan/{id}', [DataPemesananController::class, 'konfirmasi']);
-Route::get('/mencari-teknisi/{id}', [DataPemesananController::class, 'mencariteknisi']);
-Route::get('/teknisi-datang/{id}', [DataPemesananController::class, 'teknisidatang']);
-Route::get('/batal-pesanan/{id}', [DataPemesananController::class, 'batalpesanan']);
-Route::get('/pesanan-selesai/{id}', [DataPemesananController::class, 'selesai']);
-Route::get('/komplain-selesai/{id}', [DataPemesananController::class, 'komplainselesai']);
-// Route::get('/bukti/{id}', [PemesananController::class, 'bukti']);
-// Route::get('/confirm/{id}', [PemesananController::class, 'confirm']);
-// Route::get('/tolak/{id}', [PemesananController::class, 'tolak']);
-// >>>>>>> 73d132179453262b0042b91f94535f508129bd11
+    // Konsumen
+    Route::get('/konsumen', [KonsumenController::class, 'index']);
+    // Route::get('/konsumen', [KonsumenController::class, 'index']);
+    // Route::get('/kdelete/{id}', [KonsumenController::class, 'destroy']);
 
+    // Pemesanan
+    Route::get('/admin/pemesanan', [DataPemesananController::class, 'index']);
+    Route::get('/detail-pesanan/{id}', [DataPemesananController::class, 'create']);
+    Route::get('/konfirmasi-pesanan/{id}', [DataPemesananController::class, 'konfirmasi']);
+    Route::get('/mencari-teknisi/{id}', [DataPemesananController::class, 'mencariteknisi']);
+    Route::get('/teknisi-datang/{id}', [DataPemesananController::class, 'teknisidatang']);
+    Route::get('/batal-pesanan/{id}', [DataPemesananController::class, 'batalpesanan']);
+    Route::get('/pesanan-selesai/{id}', [DataPemesananController::class, 'selesai']);
+    Route::get('/komplain-selesai/{id}', [DataPemesananController::class, 'komplainselesai']);
+    // Route::get('/bukti/{id}', [PemesananController::class, 'bukti']);
+    // Route::get('/confirm/{id}', [PemesananController::class, 'confirm']);
+    // Route::get('/tolak/{id}', [PemesananController::class, 'tolak']);
+
+    // ARTIKEL
+    Route::get('/admin/artikel', [LayananController::class, 'index']);
+    Route::get('/admin/artikel/tambah', [LayananController::class, 'create']);
+    Route::post('/admin/artikel/tambah', [LayananController::class, 'store']);
+    Route::get('/admin/artikel/{id}', [LayananController::class, 'edit']);
+    Route::post('/admin/artikel/update', [LayananController::class, 'update']);
+    Route::delete('/admin/artikel/{id}', [LayananController::class, 'destroy']);
+});
 // Route::get('/', function () {
 //     return view('welcome');
 // });

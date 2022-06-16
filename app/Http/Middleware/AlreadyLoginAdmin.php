@@ -16,6 +16,9 @@ class AlreadyLoginAdmin
      */
     public function handle(Request $request, Closure $next)
     {
+        if (session()->has('SessionAdmin')) {
+            return back();
+        }
         return $next($request);
     }
 }

@@ -57,27 +57,25 @@
           <a href="{{url('/dashboard')}}" class="nav-link">Home</a>
         </li>
       </ul>
-
-      <!-- Right navbar links -->
+      <!-- Account Dropdown Menu -->
       <ul class="navbar-nav ml-auto">
-        <!-- Account Dropdown Menu -->
-        <li class="nav-item dropdown">
-          <a class="nav-link" data-toggle="dropdown" href="#">
-            <div class="d-sm-none d-lg-inline-block"><i class="far fa-user"></i> Hi, {{session()->get('SessionNama')}} <i class="fas fa-angle-down"></i></div>
+        <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+            <div class="d-sm-none d-lg-inline-block"><i class="far fa-user"></i> Hi, {{session()->get('SessionNama')}}</div>
           </a>
-          <div class="dropdown-menu dropdown-menu dropdown-menu-right">
-            <div class="dropdown"></div>
-            <div class="dropdown"></div>
-            <!-- <a href="{{url('/logout')}}" class="dropdown-item">
-                            <i class="fas fa-user-cog"></i> Setting
-                        </a> -->
-            <a href="{{url('/logout')}}" class="dropdown-item text-danger">
-              <i class="fas fa-sign-out-alt"></i> Logout
-            </a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a href="{{ url('/admin/profil/'.$admin.''')}}" class="dropdown-item has-icon">
+              <i class="far fa-user"></i> Profile
+              <a href="{{ url('/admin/settings')}}" class="dropdown-item has-icon">
+                <i class="fas fa-cog"></i> Settings
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="{{url('/logout')}}" class="dropdown-item has-icon text-danger">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </a>
           </div>
         </li>
-        <!--END-->
       </ul>
+      <!--END-->
     </nav>
     <!-- /.navbar -->
 
@@ -86,7 +84,7 @@
       <!-- Brand Logo -->
       <a href="#" class="brand-link">
 
-        <span class="brand-text font-weight-light" style="margin-left: 40px;">KBIH Al Hidayah</span>
+        <span class="brand-text font-weight-light" style="margin-left: 40px;">Servisin</span>
       </a>
 
       <!-- Sidebar -->
@@ -109,7 +107,7 @@
             <li class="nav-header">Data User</li>
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
-                <i class="fa-regular fa-file nav-icon"></i>
+                <i class="fa fa-id-card nav-icon"></i>
                 <p>
                   Admin
                   <i class="right fas fa-angle-left"></i>
@@ -156,69 +154,70 @@
                 </p>
               </a>
             </li>
-            <li class="nav-header">LAYANAN</li>
-            <li class="nav-item has-treeview">
-              <a href="#" class="nav-link">
-                <i class="fas fa-shopping-cart nav-icon"></i>
-                <p>
-                  Master Layanan
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="{{url('/admin/layanan')}}" class="nav-link">
-                    <i class="fas fa-table nav-icon"></i>
-                    <p>Data Layanan</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-header"></li>
-            <li class="nav-item has-treeview">
-              <a href="{{url('/admin/testimoni')}}" class="nav-link">
-                <i class="fas fa-table nav-icon"></i>
-                <p>
-                  Data Testimoni
 
+            <!-- POST LAYANAN -->
+            <li class="nav-header">Post</li>
+            <li class="nav-item has-treeview">
+              <a href="{{url('/admin/layanan')}}" class="nav-link">
+                <i class="fas fa-file nav-icon"></i>
+                <p>
+                  Add Layanan
                 </p>
               </a>
             </li>
+            <li class="nav-item has-treeview">
+              <a href="{{url('/admin/artikel')}}" class="nav-link">
+                <i class="fas fa-book nav-icon"></i>
+                <p>
+                  Post Artikel
+                </p>
+              </a>
+            </li>
+            <!-- END POST -->
+
+            <!-- TRANSAKSI -->
+            <li class="nav-header">Transaksi</li>
             <li class="nav-item has-treeview">
               <a href="{{url('/admin/pemesanan')}}" class="nav-link">
-                <i class="fas fa-table nav-icon"></i>
+                <i class="fas fa-shopping-cart nav-icon"></i>
                 <p>
-                  Data Pemesanan
+                  Pemesanan
+                </p>
+              </a>
+            </li>
+            <!-- END TRANSAKSI -->
+
+            <li class="nav-header">Control</li>
+            <li class="nav-item has-treeview">
+              <a href="{{url('/admin/transaksi')}}" class="nav-link">
+                <i class="fa-solid fa-users nav-icon"></i>
+                <p>
+                  Kebijakan Privasi
                 </p>
               </a>
             </li>
             <li class="nav-item has-treeview">
               <a href="{{url('/admin/transaksi')}}" class="nav-link">
-                <i class="fas fa-table nav-icon"></i>
+                <i class="fa-solid fa-users nav-icon"></i>
                 <p>
-                  Data Transaksi
+                  Syarat & Ketentuan
                 </p>
               </a>
             </li>
             <li class="nav-item has-treeview">
               <a href="{{url('/admin/tentang-kami')}}" class="nav-link">
-                <i class="fas fa-table nav-icon"></i>
+                <i class="fa-solid fa-users nav-icon"></i>
                 <p>
-                  Data Tentang Kami
+                  Cara Memesan
                 </p>
               </a>
             </li>
-            <li class="nav-item has-treeview">
-              <a href="{{url('/admin/kontak-perusahaan')}}" class="nav-link">
-                <i class="fas fa-table nav-icon"></i>
-                <p>
-                  Data Kontak Perusahaan
-                </p>
-              </a>
-            </li>
+
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
       </div>
+      <br>
+      <br>
       <!-- /.sidebar -->
     </aside>
