@@ -27,7 +27,9 @@
         <div class="tw-mx-3">
             <div class="tw-border-[#fff] tw-bg-[#fff] tw-rounded-xl tw-border tw-mt-1">
                 <p class="tw-my-1 tw-px-3 tw-pt-3 tw-font-extrabold tw-font-poppins tw-text-base">Ketentuan Pelayanan</p>
-                <p class="tw-my-1 tw-px-3 tw-pt-3 tw-font-extrabold tw-font-poppins tw-text-sm tw-text-justify tw-mb-3">{{$item->Layanan['syarat']}}</p>
+                <div class="tw-my-1 tw-px-3 tw-pt-3 tw-font-extrabold tw-font-poppins tw-text-sm tw-text-justify tw-mb-3">
+                    <p>{!!$item->Layanan['syarat']!!}</p>
+                </div>
             </div>
         </div>
     </div>

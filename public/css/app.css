@@ -1940,29 +1940,6 @@ input[type=file]::file-selector-button:hover {
   visibility: visible;
   opacity: 1;
 }
-.tw-input {
-  flex-shrink: 1;
-  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-  transition-duration: 200ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  height: 3rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  line-height: 2;
-  border-width: 1px;
-  border-color: hsl(var(--bc) / var(--tw-border-opacity));
-  --tw-border-opacity: 0;
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--b1) / var(--tw-bg-opacity));
-  border-radius: var(--rounded-btn, 0.5rem);
-}
-.tw-input-group > *, .tw-input-group > .tw-input {
-  border-radius: 0px;
-}
 .tw-link {
   cursor: pointer;
   -webkit-text-decoration-line: underline;
@@ -2042,30 +2019,6 @@ input[type=file]::file-selector-button:hover {
   --tw-scale-x: 1;
   --tw-scale-y: 1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.tw-input:focus {
-  outline: 2px solid hsla(var(--bc) / 0.2);
-  outline-offset: 2px;
-}
-.tw-input-disabled, .tw-input[disabled] {
-  cursor: not-allowed;
-  --tw-border-opacity: 1;
-  border-color: hsl(var(--b2, var(--b1)) / var(--tw-border-opacity));
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--b2, var(--b1)) / var(--tw-bg-opacity));
-  --tw-text-opacity: 0.2;
-}
-.tw-input-disabled::-moz-placeholder, .tw-input[disabled]::-moz-placeholder {
-  color: hsl(var(--bc) / var(--tw-placeholder-opacity));
-  --tw-placeholder-opacity: 0.2;
-}
-.tw-input-disabled:-ms-input-placeholder, .tw-input[disabled]:-ms-input-placeholder {
-  color: hsl(var(--bc) / var(--tw-placeholder-opacity));
-  --tw-placeholder-opacity: 0.2;
-}
-.tw-input-disabled::placeholder, .tw-input[disabled]::placeholder {
-  color: hsl(var(--bc) / var(--tw-placeholder-opacity));
-  --tw-placeholder-opacity: 0.2;
 }
 .tw-link:focus {
   outline: 2px solid transparent;
@@ -2189,10 +2142,6 @@ input[type=file]::file-selector-button:hover {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-.tw-my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
 .tw-mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -2201,21 +2150,9 @@ input[type=file]::file-selector-button:hover {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
-.tw-mx-8 {
-  margin-left: 2rem;
-  margin-right: 2rem;
-}
-.tw-mx-10 {
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
-}
-.tw-mx-0 {
-  margin-left: 0px;
-  margin-right: 0px;
-}
-.tw-mx-9 {
-  margin-left: 2.25rem;
-  margin-right: 2.25rem;
+.tw-my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .tw-mt-12 {
   margin-top: 3rem;
@@ -2259,6 +2196,12 @@ input[type=file]::file-selector-button:hover {
 .tw-mb-3 {
   margin-bottom: 0.75rem;
 }
+.tw-mr-\[23\%\] {
+  margin-right: 23%;
+}
+.tw-mr-\[37\%\] {
+  margin-right: 37%;
+}
 .tw-mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -2286,33 +2229,6 @@ input[type=file]::file-selector-button:hover {
 .tw-mr-1 {
   margin-right: 0.25rem;
 }
-.tw-mr-\[20\%\] {
-  margin-right: 20%;
-}
-.tw-mr-\[15\%\] {
-  margin-right: 15%;
-}
-.tw-mr-\[18\%\] {
-  margin-right: 18%;
-}
-.tw-mr-\[19\%\] {
-  margin-right: 19%;
-}
-.tw-mr-\[25\%\] {
-  margin-right: 25%;
-}
-.tw-mr-\[23\%\] {
-  margin-right: 23%;
-}
-.tw-mr-\[35\%\] {
-  margin-right: 35%;
-}
-.tw-mr-\[38\%\] {
-  margin-right: 38%;
-}
-.tw-mr-\[37\%\] {
-  margin-right: 37%;
-}
 .tw-block {
   display: block;
 }
@@ -2324,9 +2240,6 @@ input[type=file]::file-selector-button:hover {
 }
 .tw-h-full {
   height: 100%;
-}
-.tw-max-h-full {
-  max-height: 100%;
 }
 .tw-w-full {
   width: 100%;
@@ -2345,17 +2258,11 @@ input[type=file]::file-selector-button:hover {
 .tw-cursor-pointer {
   cursor: pointer;
 }
-.tw-list-disc {
-  list-style-type: disc;
-}
-.tw-list-\[upper-roman\] {
-  list-style-type: upper-roman;
+.tw-list-\[numberic\] {
+  list-style-type: numberic;
 }
 .tw-list-\[lower-alpha\] {
   list-style-type: lower-alpha;
-}
-.tw-list-\[numberic\] {
-  list-style-type: numberic;
 }
 .tw-appearance-none {
   -webkit-appearance: none;
@@ -2390,9 +2297,6 @@ input[type=file]::file-selector-button:hover {
 }
 .tw-content-center {
   align-content: center;
-}
-.tw-items-center {
-  align-items: center;
 }
 .tw-justify-end {
   justify-content: flex-end;
@@ -2545,10 +2449,6 @@ input[type=file]::file-selector-button:hover {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
 }
-.tw-py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
 .tw-pt-\[5\%\] {
   padding-top: 5%;
 }
@@ -2561,14 +2461,14 @@ input[type=file]::file-selector-button:hover {
 .tw-pt-1 {
   padding-top: 0.25rem;
 }
+.tw-pl-3 {
+  padding-left: 0.75rem;
+}
 .tw-pt-3 {
   padding-top: 0.75rem;
 }
 .tw-pt-4 {
   padding-top: 1rem;
-}
-.tw-pl-3 {
-  padding-left: 0.75rem;
 }
 .tw-text-left {
   text-align: left;
@@ -2768,18 +2668,6 @@ input[type=file]::file-selector-button:hover {
 
   .md\:tw-mr-\[48\%\] {
     margin-right: 48%;
-  }
-
-  .md\:tw-mr-\[40\%\] {
-    margin-right: 40%;
-  }
-
-  .md\:tw-mr-\[30\%\] {
-    margin-right: 30%;
-  }
-
-  .md\:tw-mr-\[10\%\] {
-    margin-right: 10%;
   }
 
   .md\:tw-max-w-full {

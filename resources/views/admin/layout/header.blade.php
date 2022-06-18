@@ -97,7 +97,7 @@
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item has-treeview menu-open">
-              <a href="{{url('/dashboard')}}" class="nav-link">
+              <a href="{{url('/admin/dashboard')}}" class="nav-link">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   Dashboard
@@ -139,7 +139,7 @@
               </ul>
             </li>
             <li class="nav-item has-treeview">
-              <a href="{{url('/admin/tentang-kami')}}" class="nav-link">
+              <a href="{{url('/admin/konsumen')}}" class="nav-link">
                 <i class="fa-solid fa-users nav-icon"></i>
                 <p>
                   Konsumen

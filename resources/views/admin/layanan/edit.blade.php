@@ -20,7 +20,6 @@
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
   </div>
-
   <section class="content">
     <div class="container-fluid">
       <div class="row">
@@ -31,63 +30,51 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form action="{{url('/layanan/update')}}" method="POST" enctype="multipart/form-data">
-              @csrf
+            <form action="{{url('/admin/layanan/update')}}" method="POST" enctype="multipart/form-data">
               @foreach($layanan as $item)
-              <div class="row">
-                <div class="col-12">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Kode Layanan</label>
-                        <div class="col-sm-12 col-md-7">
-                          <input type="text" class="form-control" name="kode" readonly autocomplete="off" placeholder="Kode Layanan" value="{{$item->kode_layanan}}">
-                        </div>
-                      </div>
-                      <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Icon</label>
-                        @if($item->icon)
-                        <img src="{{ asset('storage/'.$item->icon.'')}}" class="mb-3" width="150">
-                        @else
-                        <img class="img-preview img-fluid mb-3 col-sm-5">
-                        @endif
-                        <div class="input-group col-sm-12 col-md-7">
-                          <input type="file" class="form-control" name="icon">
-                        </div>
-                      </div>
-
-                      <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nama Layanan</label>
-                        <div class="col-sm-12 col-md-7">
-                          <input type="text" class="form-control" name="nama" autocomplete="off" placeholder="AC" value="{{$item->nama_layanan}}">
-                        </div>
-                      </div>
-
-                      <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Syarat dan Ketentuan</label>
-                        <div class="col-sm-12 col-md-7">
-                          <textarea type="text" class="form-control" name="syarat" placeholder="Syarat dan Ketentuan" id="editor">{{$item->syarat}}</textarea>
-                        </div>
-                      </div>
-                      <div class="form-group row mb-4">
-                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
-                        <div class="col-sm-12 col-md-7">
-                          <button type="submit" class="btn btn-warning">Edit</button>
-                          <a href="{{url('/layanan')}}" class="btn btn-danger">Cancel</a>
-                        </div>
-                      </div>
+              @csrf
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Kode Layanan</label>
+                  <input type="text" class="form-control" name="kode" readonly autocomplete="off" placeholder="Kode Layanan" value="{{$item->kode_layanan}}">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputFile">Icon</label>
+                  @if($item->icon)
+                  <img src="{{ asset('storage/'.$item->icon.'')}}" class="mb-3 col-sm-5 d-block" width="150">
+                  @else
+                  <img class="img-preview img-fluid mb-3 col-sm-5">
+                  @endif
+                  <div class="input-group">
+                    <div class="custom-file">
+                      <input type="file" class="form-control" name="icon" onchange="previewImage()" id="gambar">
                     </div>
                   </div>
                 </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Nama Layanan</label>
+                  <input type="text" class="form-control" name="nama" autocomplete="off" placeholder="AC" value="{{$item->nama_layanan}}">
+                </div>
+                <div class="form-group">
+                  <label for="editor">Syarat & Ketentuan</label>
+                  <textarea type="text" class="form-control" name="syarat" placeholder="Syarat dan Ketentuan" id="editor">{{$item->syarat}}</textarea>
+                </div>
               </div>
-              @endforeach
+              <!-- /.card-body -->
+              <div class="card-footer">
+                <button type="submit" class="btn btn-warning">Edit</button>
+                <a href="{{url('/admin/layanan')}}" class="btn btn-danger">Cancel</a>
+              </div>
             </form>
-
+            @endforeach
           </div>
         </div>
       </div>
     </div>
   </section>
+  <br>
+  <br>
+  <br>
 </div>
 
 @endsection

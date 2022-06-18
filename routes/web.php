@@ -82,7 +82,7 @@ Route::middleware(['LoginAdmin'])->name('admin.')->group(function () {
     // Route::post('/anggota/edit', [AnggotaController::class, 'update']);
 
     // Konsumen
-    Route::get('/konsumen', [KonsumenController::class, 'index']);
+    Route::get('/admin/konsumen', [KonsumenController::class, 'index']);
     // Route::get('/konsumen', [KonsumenController::class, 'index']);
     // Route::get('/kdelete/{id}', [KonsumenController::class, 'destroy']);
 
