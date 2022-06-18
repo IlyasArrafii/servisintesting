@@ -7,7 +7,7 @@
     </div>
   </section>
 
-  <form action="{{url('/layanan/tambah')}}" method="POST" enctype="multipart/form-data">
+  <form action="{{url('/admin/layanan/tambah')}}" method="POST" enctype="multipart/form-data">
     @csrf
 
     <div class="row">

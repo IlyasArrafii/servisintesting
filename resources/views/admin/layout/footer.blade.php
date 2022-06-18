@@ -54,9 +54,8 @@
 <!-- CKeditor -->
 <script src="{{url('assets/admin/plugins/ckeditor5-build-classic/ckeditor.js')}}"></script>
 <!-- SweetAlert -->
-<!-- <script src="{{url('assets/admin/plugins/sweetalert2/sweetalert2.js')}}"></script>
-<script src="{{url('assets/admin/plugins/sweetalert2/sweetalert2.min.js')}}"></script> -->
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{{url('assets/admin/plugins/sweetalert2/sweetalert2.js')}}"></script>
+<script src="{{url('assets/admin/plugins/sweetalert2/sweetalert2.min.js')}}"></script>
 
 <script>
     $(function() {

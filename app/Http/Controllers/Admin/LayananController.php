@@ -56,7 +56,7 @@ class LayananController extends Controller
             'syarat' => $request->input('syarat'),
             'icon' => $request->file('icon')->store('image'),
         ]);
-        return redirect('/admin/layanan')->with('success', 'Data Berhasil Ditambahkan');
+        return redirect('/admin/layanan')->withSuccess('Data Berhasil Ditambahkan');
     }
 
     /**

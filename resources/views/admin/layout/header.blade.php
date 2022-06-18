@@ -63,7 +63,7 @@
             <div class="d-sm-none d-lg-inline-block"><i class="far fa-user"></i> Hi, {{session()->get('SessionNama')}}</div>
           </a>
           <div class="dropdown-menu dropdown-menu-right">
-            <a href="{{ url('/admin/profil/'.$admin.''')}}" class="dropdown-item has-icon">
+            <a href="{{ url('/admin/profile/'.session()->get('SessionAdmin').'')}}" class="dropdown-item has-icon">
               <i class="far fa-user"></i> Profile
               <a href="{{ url('/admin/settings')}}" class="dropdown-item has-icon">
                 <i class="fas fa-cog"></i> Settings
@@ -115,7 +115,7 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="{{url('/admin/anggota')}}" class="nav-link">
+                  <a href="{{url('/admin/data-admin')}}" class="nav-link">
                     <i class="fa fa-id-card nav-icon"></i>
                     <p>Data Admin</p>
                   </a>

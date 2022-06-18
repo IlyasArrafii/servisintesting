@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
+use RealRashid\SweetAlert\Facades\Alert;
+use RealRashid\SweetAlert;
 
-class LoginController extends Controller
+
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,39 +18,26 @@ class LoginController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        $admin = Admin::all();
+        return view('admin.admin.index', compact('admin'));
+    }
+    public function profile($id)
+    {
+        $admin = Admin::where('id', $id)->get();
+        return view('admin.admin.profile', compact('admin'));
     }
 
-    // LOGIN ADMIN
-    public function PostAdminLogin(Request $request)
+    public function changepass(Request $request)
     {
-
         $request->validate([
-            'email' => 'required',
-            'password' => 'required',
+            'password' => 'confirmed',
         ]);
+        $user = Admin::where('id', $request->input('id_admin'))->update([
+            'password' => bcrypt($request->input('password'))
+        ]);
+        toast('Berhasil Ganti Password', 'success')->autoClose(5000)->hideCloseButton()->timerProgressBar()->width('320px');
 
-        $email = $request->input('email');
-        $password = $request->input('password');
-        $admin = Admin::where('email', $email)->first();
-
-        if ($admin) {
-            if (Hash::check($password, $admin->password)) {
-                $request->session()->put('SessionAdmin', $admin->id);
-                $request->session()->put('SessionNama', $admin->name);
-                return redirect('/admin/dashboard');
-            } else {
-                return back()->with('warning', ' ');
-            }
-        } else {
-            return back()->with('warning', ' ');
-        }
-    }
-    // PROSES LOGOUT ADMIN
-    public function LogoutAdmin()
-    {
-        session()->forget('SessionAdmin');
-        return redirect('/admin');
+        return redirect('/admin/dashboard');
     }
 
     /**

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AnggotaController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DataPemesananController;
@@ -70,7 +71,10 @@ Route::middleware(['LoginAdmin'])->name('admin.')->group(function () {
     Route::post('/admin/layanan/update', [LayananController::class, 'update']);
     Route::delete('/admin/layanan/{id}', [LayananController::class, 'destroy']);
 
-    // Anggota
+    // Admin
+    Route::get('/admin/data-admin', [AdminController::class, 'index']);
+    Route::get('/admin/profile/{id}', [AdminController::class, 'profile']);
+    Route::post('/change-password', [AdminController::class, 'changepass']);
     // Route::get('/anggota/tambah', [AnggotaController::class, 'create']);
     // Route::post('/anggota/tambah', [AnggotaController::class, 'store']);
     // Route::get('/adelete/{id}', [AnggotaController::class, 'destroy']);

@@ -48,19 +48,15 @@
                             <tr>
                                 <th>No</th>
                                 <th>Nama</th>
-                                <th>Telpon</th>
-                                <th>Jabatan</th>
                                 <th>Email</th>
                                 <th>Edit</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($admin as $item)
                             <tr>
                                 <td>{{$loop->iteration}}</td>
-                                <td>{{$item->username}}</td>
-                                <td>{{$item->nama}}</td>
-                                <td>{{$item->telepon}}</td>
-                                <td>{{$item->jabatan}}</td>
+                                <td>{{$item->name}}</td>
                                 <td>{{$item->email}}</td>
                                 <!-- <td><img src="{{ asset('storage/'.$item->gambar.'')}}" width="130" height="150" class="rounded-circle"></td> -->
                                 <td>
@@ -72,7 +68,7 @@
                                     </form>
                                 </td>
                             </tr>
-
+                            @endforeach
                         </tbody>
 
                     </table>

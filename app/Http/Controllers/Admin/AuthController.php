@@ -24,9 +24,9 @@ class AuthController extends Controller
 
         if ($admin) {
             if (Hash::check($password, $admin->password)) {
-                $request->session()->put('SessionAdmin', $admin->nama);
-                $request->session()->put('SessionNama', $admin->nama);
-                $request->session()->put('SessionJabatan', $admin->nama);
+                $request->session()->put('SessionAdmin', $admin->id);
+                $request->session()->put('SessionNama', $admin->name);
+                $request->session()->put('SessionJabatan', $admin->jabatan);
                 return redirect('/dashboard');
             } else {
                 return back()->with('gagal', ' ');
