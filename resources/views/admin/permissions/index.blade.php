@@ -1,5 +1,5 @@
 @extends('admin.layout.main')
-@section('judul', 'Admin')
+@section('judul', 'Roles')
 @section('content')
 
 <!-- Content Wrapper. Contains page content -->
@@ -9,12 +9,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Data Admin</h1>
+                    <h1 class="m-0">Data Roles</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{url('/dashboard')}}">Home</a></li>
-                        <li class="breadcrumb-item active">Data Admin</li>
+                        <li class="breadcrumb-item active">Data Roles</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -29,7 +29,7 @@
             <div class="row">
 
                 <div class="col-md-9">
-                    <a href="{{url('/admin/add-admin/tambah')}}" class="btn btn-success adds ml-auto"><i class="fa fa-plus"></i> Tambah Admin </a>
+                    <a href="{{url('/admin/add-admin/tambah')}}" class="btn btn-success adds ml-auto"><i class="fa fa-plus"></i> Tambah Anggota </a>
                 </div>
                 <div class="col-md-3">
                 </div>
@@ -60,9 +60,9 @@
                                 <td>{{$item->email}}</td>
                                 <!-- <td><img src="{{ asset('storage/'.$item->gambar.'')}}" width="130" height="150" class="rounded-circle"></td> -->
                                 <td>
-                                    <a href="{{url('/anggota/'.$item->id.'')}}" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
-                                    <a href="#" data-id="{{$item->id}}" class="btn btn-danger confirm"><i class="fas fa-trash-alt"></i></a>
-                                    <form action="/anggota/{{$item->id}}" id="delete{{$item->id}}" method="post" class="d-inline">
+                                    <a href="{{url('/anggota/'.$item->id_anggota.'')}}" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                    <a href="#" data-id="{{$item->id_anggota}}" class="btn btn-danger confirm"><i class="fas fa-trash-alt"></i></a>
+                                    <form action="/anggota/{{$item->id_anggota}}" id="delete{{$item->id_anggota}}" method="post" class="d-inline">
                                         @csrf
                                         @method('delete')
                                     </form>

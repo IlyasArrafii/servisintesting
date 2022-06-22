@@ -52,4 +52,26 @@ class generateKode extends Model
         }
         return $format;
     }
+    public function KodePenyediaJasa()
+    {
+        $jasa = PenyediaJasa::orderBy('id_penyediajasa', 'desc')->first();
+
+        if (empty($jasa)) {
+            $format = "JS0001";
+        } else {
+            $kode = $jasa->id_penyediajasa;
+            $num = substr($kode, 2, 4);
+            $add = (int) $num + 1;
+            if (strlen($add) == 1) {
+                $format = "P000" . $add;
+            } else if (strlen($add) == 2) {
+                $format = "P00" . $add;
+            } else if (strlen($add) == 3) {
+                $format = "P0" . $add;
+            } else {
+                $format = "P" . $add;
+            }
+        }
+        return $format;
+    }
 }
