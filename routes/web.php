@@ -52,11 +52,11 @@ Route::get('/keunggulan', [PagesController::class, 'keunggulan']);
 // Admin
 
 // Login
-Route::get('/admin', [LoginController::class, 'index'])->middleware('AlreadyLoginAdmin');
+Route::get('/admin', [LoginController::class, 'index']);
 Route::post('/admin/login', [LoginController::class, 'PostAdminLogin'])->name('admin.login.post');
 
 // Route Back End
-Route::middleware(['LoginAdmin'])->name('admin.')->group(function () {
+Route::middleware(['auth:admin'])->group(function () {
     //Dashboard
     Route::get('/admin/dashboard', [DashboardController::class, 'index']);
 

@@ -3,12 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Admin;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 
-class LoginController extends Controller
+class PromoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,37 +14,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
-    }
-
-    // LOGIN ADMIN
-    public function PostAdminLogin(Request $request)
-    {
-        $request->validate([
-            'email' => 'required',
-            'password' => 'required',
-        ]);
-
-        $email = $request->input('email');
-        $password = $request->input('password');
-        $admin = Admin::where('email', $email)->first();
-
-        if ($admin) {
-            if (Hash::check($password, $admin->password)) {
-                Auth::guard('admin')->login($admin);
-                return redirect('/admin/dashboard');
-            } else {
-                return back()->with('warning', ' ');
-            }
-        } else {
-            return back()->with('warning', ' ');
-        }
-    }
-    // PROSES LOGOUT ADMIN
-    public function LogoutAdmin()
-    {
-        auth()->guard('admin')->logout();
-        return redirect('/admin');
+        //
     }
 
     /**
