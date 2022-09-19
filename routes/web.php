@@ -61,7 +61,7 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/admin/dashboard', [DashboardController::class, 'index']);
 
     // Logout
-    Route::get('/logout', [LoginController::class, 'LogoutAdmin']);
+    Route::get('/admin/logout', [LoginController::class, 'LogoutAdmin']);
 
     // Route Layanan
     Route::get('/admin/layanan', [LayananController::class, 'index']);
@@ -78,6 +78,7 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::post('/change-password', [AdminController::class, 'changepass']);
     Route::get('/admin/add-admin/tambah', [AdminController::class, 'create']);
     Route::post('/admin/add-admin/tambah', [AdminController::class, 'store']);
+    Route::post('/admin/data-admin/update', [AdminController::class, 'update']);
     Route::get('/admin/data-admin/{id}', [AdminController::class, 'edit']);
     // Route::get('/adelete/{id}', [AnggotaController::class, 'destroy']);
     // Route::get('/anggota/{id}', [AnggotaController::class, 'edit']);

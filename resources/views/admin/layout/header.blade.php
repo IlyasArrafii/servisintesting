@@ -30,6 +30,8 @@
     <!-- DataTables -->
     <link rel="stylesheet" href="{{ url('assets/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ url('assets/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url('assets/admin/dist/img/logo-servisin.png') }}">
+
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/ionicons@5.5.1/dist/ionicons.js"></script>
 
@@ -54,20 +56,20 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="{{ url('/dashboard') }}" class="nav-link">Home</a>
+                    <a href="{{ url('/admin/dashboard') }}" class="nav-link">Home</a>
                 </li>
             </ul>
             <!-- Account Dropdown Menu -->
             <ul class="navbar-nav ml-auto">
                 <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                        <div class="d-sm-none d-lg-inline-block"><i class="far fa-user"></i> Hi, {{ session()->get('SessionNama') }}</div>
+                        <div class="d-sm-none d-lg-inline-block"><i class="far fa-user"></i> Hi, {{ auth()->guard('admin')->user()->name }}</div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <a href="{{ url('/admin/profile/' . session()->get('SessionAdmin') . '') }}" class="dropdown-item has-icon">
+                        <a href="{{ url('/admin/profile/' .auth()->guard('admin')->user()->id .'') }}" class="dropdown-item has-icon">
                             <i class="far fa-user"></i> Profile
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a href="{{ url('/logout') }}" class="dropdown-item has-icon text-danger">
+                        <a href="{{ url('/admin/logout') }}" class="dropdown-item has-icon text-danger">
                             <i class="fas fa-sign-out-alt"></i> Logout
                         </a>
                     </div>
@@ -89,7 +91,6 @@
 
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
-                <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
@@ -107,7 +108,7 @@
                             <a href="#" class="nav-link">
                                 <i class="fa fa-id-card nav-icon"></i>
                                 <p>
-                                    Admin
+                                    Hak Akses Admin
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>

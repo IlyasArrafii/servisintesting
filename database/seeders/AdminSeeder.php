@@ -40,8 +40,8 @@ class AdminSeeder extends Seeder
 
         // gets all permissions via Gate::before rule; see AuthServiceProvider
         $admin = Admin::create([
-            'name' => 'admin',
-            'email' => 'admin@gmail.com',
+            'name' => 'manager',
+            'email' => 'manager@gmail.com',
             'notelpon' => '12345678',
             'password' => bcrypt('12345678'),
         ]);

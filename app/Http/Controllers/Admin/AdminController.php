@@ -76,23 +76,34 @@ class AdminController extends Controller
     {
         $request->validate([
             'nama' => 'required',
-            'username' => 'required',
             'telp' => 'required',
             'email' => 'required',
-            'password' => 'required|min:8',
+            'password' => 'required|min:8|confirmed',
         ]);
-
-        Admin::create([
-
+        $admins = Admin::create([
             'name' => $request->input('nama'),
             'email' => $request->input('email'),
-            'notelepon' => $request->input('telp'),
-            'jabatan' => $request->input('jabatan'),
-            'gambar' => $request->file('gambar')->store('image'),
-            'username' => $request->input('username'),
-            'password' => Hash::make($request->input('password'))
+            'password' => Hash::make($request->input('password')),
+            'notelpon' => $request->input('telp'),
         ]);
-        return redirect('/admin/anggota')->withSuccess('Data Berhasil Ditambahkan');
+        // Add Data Admin + Give Role
+        if ($request->input('roles') == "Manager") {
+            $role = $admins->assignRole('manager');
+        } elseif ($request->input('roles') == "karyawan") {
+            $role = $admins->assignRole('karyawan');
+        };
+        if ($request->input('give') == "create") {
+            $role->givePermissionTo('create');
+        } elseif ($request->input('give') == "update") {
+            $role->givePermissionTo('update');
+        } elseif ($request->input('give') == "delete") {
+            $role->givePermissionTo('delete');
+        } elseif ($request->input('give') == "show") {
+            $role->givePermissionTo('show');
+        }
+
+        toast('Berhasil Menambahkan Admin', 'success')->autoClose(5000)->hideCloseButton()->timerProgressBar()->width('350px');
+        return redirect('/admin/data-admin');
     }
 
     /**
@@ -125,63 +136,24 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         $request->validate([
             'nama' => 'required',
-            'username' => 'required',
-            'telp' => 'required',
-            'jabatan' => 'required',
+            'notelpon' => 'required',
             'email' => 'required',
-            'password' => 'required',
+            'password' => ['required', 'confirmed'],
         ]);
 
-        if ($request->file('gambar')) {
-            $gambar = $request->file('gambar')->store('image');
-            $data = Admin::where('id_anggota', $request->input('kode'))->first();
-            if (!empty($data->gambar)) {
-                $test = Storage::delete($data->gambar);
-                $hasil = $gambar;
-                Admin::where('id_anggota', $request->input('kode'))
-                    ->update([
-                        'id_anggota' => $request->input('kode'),
-                        'nama' => $request->input('nama'),
-                        'telpon' => $request->input('telp'),
-                        'jabatan' => $request->input('jabatan'),
-                        'email' => $request->input('email'),
-                        'gambar' => $hasil,
-                        'username' => $request->input('username'),
-                        'password' => Hash::make($request->input('password'))
-                    ]);
-            } else {
-                $hasil = $gambar;
-                Admin::where('id_anggota', $request->input('kode'))
-                    ->update([
-                        'id_anggota' => $request->input('kode'),
-                        'nama' => $request->input('nama'),
-                        'telpon' => $request->input('telp'),
-                        'jabatan' => $request->input('jabatan'),
-                        'email' => $request->input('email'),
-                        'gambar' => $hasil,
-                        'username' => $request->input('username'),
-                        'password' => Hash::make($request->input('password'))
-                    ]);
-            }
-        } else {
-            $data = Admin::where('id_anggota', $request->input('kode'))->first();
-            Admin::where('id', $id)
-                ->update([
-                    'id_anggota' => $request->input('kode'),
-                    'nama' => $request->input('nama'),
-                    'telpon' => $request->input('telp'),
-                    'jabatan' => $request->input('jabatan'),
-                    'email' => $request->input('email'),
-                    'gambar' => $data->gambar,
-                    'username' => $request->input('username'),
-                    'password' => Hash::make($request->input('password'))
-                ]);
-        }
-        return redirect('/admin/anggota')->withSuccess('Data Berhasil Diupdate');
+        Admin::where('id', $request->kode)->update([
+            'name' => $request->nama,
+            'email' => $request->email,
+            'notelpon' => $request->notelpon,
+            'password' => Hash::make($request->password)
+        ]);
+        toast('Berhasil Mengedit Data', 'success')->autoClose(5000)->hideCloseButton()->timerProgressBar()->width('350px');
+
+        return redirect('/admin/data-admin')->withSuccess('Data Berhasil Diupdate');
     }
 
     /**

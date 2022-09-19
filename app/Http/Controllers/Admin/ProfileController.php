@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -18,7 +20,37 @@ class ProfileController extends Controller
         $admin = Admin::where('id', $id)->get();
         return view('admin.profile.index', compact('admin'));
     }
+    public function profile($id)
+    {
+        $admin = Admin::where('id', $id)->get();
+        $dataAdmin = Auth::user('admin')->password;
+        return view('admin.admin.profile', compact('admin', 'dataAdmin'));
+    }
 
+    public function changepass(Request $request)
+    {
+        $request->validate([
+            'newPassword' => 'confirmed',
+        ]);
+
+        $user = Admin::where('id', $request->input('id_admin'))->update([
+            'password' => Hash::make($request->input('newPassword'))
+        ]);
+        toast('Berhasil Ganti Password', 'success')->autoClose(5000)->hideCloseButton()->timerProgressBar()->width('320px');
+
+        return redirect('/admin/dashboard');
+    }
+
+    public function changeprofile(Request $request)
+    {
+        $admin = Admin::where('id', $request->input('id_admin'))->update([
+            'name' => $request->input('nama'),
+            'notelpon' => $request->input('telp')
+        ]);
+        toast('Berhasil Update Profile', 'success')->autoClose(5000)->hideCloseButton()->timerProgressBar()->width('320px');
+
+        return back();
+    }
     /**
      * Show the form for creating a new resource.
      *
