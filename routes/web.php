@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', [PagesController::class, 'index']);
+Route::get('/', [PagesController::class, 'index']);
 Route::get('/login', [PagesController::class, 'login']);
 Route::get('/register', [PagesController::class, 'register']);
 Route::get('/pesanan', [PagesController::class, 'pesanan']);
@@ -40,7 +40,7 @@ Route::get('/komplain/{id}', [PagesController::class, 'komplain']);
 Route::post('/kirim-komplain', [PagesController::class, 'kirimkomplain']);
 Route::get('/keunggulan', [PagesController::class, 'keunggulan']);
 
-
+require __DIR__ . '/auth.php';
 
 
 
@@ -113,10 +113,8 @@ Route::middleware(['auth:admin'])->group(function () {
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', [PagesController::class, 'index']);
+// Route::get('/', [PagesController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
-
-require __DIR__ . '/auth.php';
