@@ -1,66 +1,49 @@
-<!doctype html>
-<html lang="en">
+   <!-- Header Start -->
+   <header>
+       <div class="tw-bg-orange mobile:tw-h-[120px]">
+           <div class="tw-mx-auto tw-max-w-screen-xl tw-px-4 sm:tw-px-6 lg:tw-px-3">
+               <div class="tw-font-poppins tw-flex tw-h-16 tw-items-center tw-justify-between">
+                   <div class="tw-w-full sm:tw-flex-1 lg:tw-flex-1 xl:tw-flex-1 mobile:tw-mt-[50px] tablet:tw-flex-1">
+                       <a class="tw-block tw-text-teal-600" href="/">
+                           <img src="{{ url('assets/img/logo-header.png') }}" class="tw-h-10 tw-max-w-lg tw-items-center" alt="">
+                           <span class="tw-not-sr-only tw-max-w-lg tw-text-sm tw-text-white sm:tw-sr-only lg:tw-sr-only xl:tw-sr-only tablet:tw-sr-only">
+                               {{ $today }}</span>
+                           @if (isset(Auth::user()->id))
+                               <p class="tw-not-sr-only tw-mt-1 tw-max-w-lg tw-text-sm tw-text-white sm:tw-sr-only lg:tw-sr-only xl:tw-sr-only tablet:tw-sr-only">
+                                   Selamat Datang! {{ Auth::user()->name }}</p>
+                           @endif
+                       </a>
+                   </div>
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{{ config('app.name') }}</title>
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ url('assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url('assets/css/style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/fontawesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="{{ url('assets/owlcarousel/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ url('assets/owlcarousel/owl.theme.default.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
-    <link rel="icon" type="image/x-icon" href="{{ url('assets/admin/dist/img/logo-servisin.png') }}">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Baloo' rel='stylesheet'>
-
-</head>
-
-<body>
-
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light d-none d-sm-block">
-        <div class="container">
-            <a class="navbar-brand" href="#"><img src="assets/img/brand/brand.jpg" width="70"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav ml-auto">
-                    <a class="nav-link active" href="#">Beranda <span class="sr-only">(current)</span></a>
-                    <a class="nav-link" href="#">Pesanan</a>
-                    <a class="nav-link" href="#">Akun</a>
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <nav class="navbar navbar-expand d-md-none d-lg-none d-xl-none fixed-bottom nav-mobile">
-        <div class="justify-content-center container">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a href="{{ url('/pesanan') }}" class="nav-link">
-                        <img src="{{ url('assets/img/icon/news.png') }}" width="45" class="icon-nav-pesanan">
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="{{ url('/') }}" class="nav-link">
-                        <img src="{{ url('assets/img/icon/house.png') }}" width="45" class="icon-nav-beranda">
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="{{ url('/profil') }}" class="nav-link">
-                        <img src="{{ url('assets/img/icon/user.png') }}" width="45" class="icon-nav-profile">
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+                   <div class="md:tw-flex md:tw-items-center mobile:tw-hidden">
+                       <div class="tw-items-center tw-gap-2">
+                           <div class="sm:tw-flex sm:tw-gap-2">
+                               <a class="tw-bg-orange-500 tw-px-7 tw-py-2.5 tw-text-white tw-transition tw-duration-300 hover:tw-text-gray-400 sm:tw-px-3.5" href="{{ url('/') }}">
+                                   Beranda
+                               </a>
+                               @if (isset(Auth::user()->id))
+                                   <a class="tw-bg-orange-500 tw-px-7 tw-py-2.5 tw-text-white tw-transition tw-duration-300 hover:tw-text-gray-400 sm:tw-px-3.5" href="{{ url('/pesanan') }}">
+                                       Pesanan
+                                   </a>
+                               @else
+                                   <a class="tw-bg-orange-500 tw-px-7 tw-py-2.5 tw-text-white tw-transition tw-duration-300 hover:tw-text-gray-400 sm:tw-px-3.5" href="{{ url('/login') }}">
+                                       Pesanan
+                                   </a>
+                               @endif
+                               @if (isset(Auth::user()->id))
+                                   <a class="tw-bg-orange-500 hover:tw-bg-orange-600 tw-btn-block tw-rounded-xl tw-px-9 tw-py-2.5 tw-text-white tw-duration-300">
+                                       Selamat Datang! {{ Auth::user()->name }}
+                                   </a>
+                               @else
+                                   <a class="tw-bg-orange-500 hover:tw-bg-orange-600 tw-btn-block tw-rounded-xl tw-px-9 tw-py-2.5 tw-text-white tw-outline tw-outline-2 tw-outline-white tw-duration-300" href="{{ url('/login') }}">
+                                       Masuk
+                                   </a>
+                               @endif
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </header>
+   <!-- Header End -->

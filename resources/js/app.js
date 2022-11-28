@@ -1,3 +1,5 @@
-require('./bootstrap');
+// require("./bootstrap");
 
-import 'bootstrap';
+// import "bootstrap";
+
+import "flowbite";
