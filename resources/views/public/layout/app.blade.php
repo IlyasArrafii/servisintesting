@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ url(mix('css/app.css')) }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url('assets/owlcarousel/owl.carousel.min.css') }}">
@@ -15,7 +13,9 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="{{ url('assets/img/logo-servisin.png') }}">
     <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet" />
-    {{-- <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" /> --}}
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ url(mix('css/app.css')) }}" rel="stylesheet">
     <script type="text/javascript" src="{{ asset('/js/app.js') }}" defer></script>
     <script type="text/javascript" src="{{ url(mix('/js/app.js')) }}" defer></script>
 </head>
@@ -37,6 +37,7 @@
         {{-- <script src="{{ url('assets/js/bootstrap.bundle.min.js') }}"></script> --}}
         <script src="{{ url('assets/owlcarousel/owl.carousel.min.js') }}"></script>
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script src="https://unpkg.com/flowbite@1.5.4/dist/flowbite.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 const swiper = new Swiper('.swiper-container', {
@@ -74,6 +75,7 @@
         <script src="{{ url('assets/js/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ url('assets/owlcarousel/owl.carousel.min.js') }}"></script>
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script src="https://unpkg.com/flowbite@1.5.4/dist/flowbite.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 const swiper = new Swiper('.swiper-container', {
