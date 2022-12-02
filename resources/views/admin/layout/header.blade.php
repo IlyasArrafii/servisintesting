@@ -165,7 +165,7 @@
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="{{ url('/admin/artikel') }}" class="nav-link">
+                            <a href="{{ route('admin.artikel.index') }}" class="nav-link">
                                 <i class="fas fa-book nav-icon"></i>
                                 <p>
                                     Post Artikel

@@ -4,7 +4,7 @@
     <section class="tw-min-h-screen tw-bg-orange tw-pb-24 tw-pt-24 mobile:tw-pt-1 mobile:tw-pb-16">
         <div class="tw-mx-auto tw-flex tw-h-full tw-flex-col tw-items-center tw-justify-center tw-px-4 tw-py-8 md:tw-h-screen lg:tw-py-0">
             <a href="#" class="tw-mb-6 tw-flex tw-items-center tw-text-2xl tw-font-semibold tw-text-gray-900">
-                <img src="src/img/logo-header.png" class="tw-mx-auto tw-h-[90px] tw-max-w-lg mobile:tw-h-[65px]" alt="">
+                <img src="{{ url('assets/img/brand/servisin.png') }}" class="tw-mx-auto tw-h-[90px] tw-max-w-lg mobile:tw-h-[65px]" alt="">
             </a>
             <div class="tw-w-full tw-rounded-lg tw-bg-white tw-shadow sm:tw-max-w-md md:tw-mt-0 xl:tw-p-0">
                 <div class="tw-font-poppins tw-mx-auto tw-space-y-4 tw-p-6 sm:tw-p-8 md:tw-space-y-6">
@@ -31,7 +31,7 @@
                         </div>
                         <button type="submit" class="tw-w-full tw-rounded-lg tw-bg-orange tw-px-5 tw-py-2.5 tw-text-center tw-text-sm tw-font-medium tw-text-white hover:tw-bg-orange/90 focus:tw-outline-none focus:tw-ring-4 focus:tw-ring-orange">Daftar</button>
                         <p class="tw-font-poppins tw-text-center tw-text-sm tw-font-light tw-text-gray-500 dark:tw-text-gray-400">
-                            Sudah Punya Akun ? <a href="login.html" class="tw-font-bold tw-text-black hover:tw-text-orange hover:tw-no-underline">Masuk
+                            Sudah Punya Akun ? <a href="{{ url('/login') }}" class="tw-font-bold tw-text-black hover:tw-text-orange hover:tw-no-underline">Masuk
                                 Disini</a>
                         </p>
                     </form>

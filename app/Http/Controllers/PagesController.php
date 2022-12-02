@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Artikel;
 use App\Models\generateKode;
 use App\Models\Komplain;
 use App\Models\Layanan;
@@ -17,8 +18,10 @@ class PagesController extends Controller
     public function index()
     {
         $layanan = Layanan::all();
+        $getDataArtikel = Artikel::latest()->orderBy('id', 'asc')->limit(3)->get();
         $today = Carbon::now()->isoFormat('dddd, D MMMM Y');
-        return view('public.home.index', compact('layanan', 'today'));
+        // dd($getDataArtikel);
+        return view('public.home.index', compact('layanan', 'today', 'getDataArtikel'));
     }
     public function login()
     {
@@ -133,5 +136,19 @@ class PagesController extends Controller
             $nama_layanan = $item->Layanan['nama_layanan'];
         }
         return redirect('https://wa.me/+6285772277727?text=Hai Servisin! %0ASaya ingin mengajukan komplain dengan data berikut:%0A%0AID Pemesanan : ' . $id_pemesanan . '%0ANama : ' . $nama . '%0AAlamat : ' . $alamat . '%0ALayanan : ' . $nama_layanan . '%0ADetail Komplain : ' . $request->input('komplain') . '%0A%0AMohon untuk segera diperbaiki kembali. %0ATerimakasih!');
+    }
+
+    // Handle Detail Artikel
+    public function detailArtikel($slug)
+    {
+        $getDetailArtikel = Artikel::where('slug', $slug)->get();
+        return view('public.artikel.detail', compact('getDetailArtikel'));
+    }
+
+    // Handle Artikel Selengkapnya
+    public function selengkapnyaArtikel()
+    {
+        $getDataAllArtikel = Artikel::all();
+        return view('public.artikel.selengkapnya', compact('getDataAllArtikel'));
     }
 }

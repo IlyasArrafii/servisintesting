@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AnggotaController;
+use App\Http\Controllers\Admin\ArtikelController;
+use App\Http\Controllers\Admin\CarouselPromoController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DataPemesananController;
 use App\Http\Controllers\Admin\KonsumenController;
@@ -23,26 +25,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [PagesController::class, 'index']);
-Route::get('/login', [PagesController::class, 'login']);
-Route::get('/register', [PagesController::class, 'register']);
-Route::get('/pesanan', [PagesController::class, 'pesanan']);
-Route::get('/profil', [PagesController::class, 'profil']);
-Route::get('/pemesanan/{slug}', [PagesController::class, 'pemesanan']);
-Route::post('/pemesanan/tambah', [PemesananController::class, 'store']);
-Route::get('/detail-pemesanan/{id}', [PagesController::class, 'detailpemesanan']);
-Route::get('/syarat-pemesanan/{id}', [PagesController::class, 'syaratpemesanan']);
-Route::get('/batal-pemesanan/{id}', [PagesController::class, 'batalpemesanan']);
-Route::post('/checkout', [PagesController::class, 'checkout']);
-Route::get('/kebijakan-privasi', [PagesController::class, 'kebijakan']);
-Route::get('/cara-pemesanan', [PagesController::class, 'caramemesan']);
-Route::get('/komplain/{id}', [PagesController::class, 'komplain']);
-Route::post('/kirim-komplain', [PagesController::class, 'kirimkomplain']);
-Route::get('/keunggulan', [PagesController::class, 'keunggulan']);
+Route::get('/', [PagesController::class, 'index'])->name('home.index');
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/login', [PagesController::class, 'login'])->name('home.login');
+    Route::get('/register', [PagesController::class, 'register'])->name('home.registeracc');
+    Route::get('/pesanan', [PagesController::class, 'pesanan']);
+    Route::get('/profil', [PagesController::class, 'profil']);
+    Route::get('/pemesanan/{slug}', [PagesController::class, 'pemesanan']);
+    Route::post('/pemesanan/tambah', [PemesananController::class, 'store']);
+    Route::get('/detail-pemesanan/{id}', [PagesController::class, 'detailpemesanan']);
+    Route::get('/syarat-pemesanan/{id}', [PagesController::class, 'syaratpemesanan']);
+    Route::get('/batal-pemesanan/{id}', [PagesController::class, 'batalpemesanan']);
+    Route::post('/checkout', [PagesController::class, 'checkout']);
+    Route::get('/kebijakan-privasi', [PagesController::class, 'kebijakan']);
+    Route::get('/cara-pemesanan', [PagesController::class, 'caramemesan']);
+    Route::get('/komplain/{id}', [PagesController::class, 'komplain']);
+    Route::post('/kirim-komplain', [PagesController::class, 'kirimkomplain']);
+    Route::get('/keunggulan', [PagesController::class, 'keunggulan']);
+});
 require __DIR__ . '/auth.php';
 
+// Handle Detail Artikel
+Route::get('/detail-artikel/{slug}', [PagesController::class, 'detailArtikel'])->name('home.detailartikel');
 
+// Handle All Artikel
+Route::get('/artikel/selengkapnya', [PagesController::class, 'selengkapnyaArtikel']);
 
 
 
@@ -56,7 +64,7 @@ Route::get('/admin', [LoginController::class, 'index']);
 Route::post('/admin/login', [LoginController::class, 'PostAdminLogin'])->name('admin.login.post');
 
 // Route Back End
-Route::middleware(['auth:admin'])->group(function () {
+Route::middleware(['auth:admin'])->name('admin.')->prefix('/admin/')->group(function () {
     //Dashboard
     Route::get('/admin/dashboard', [DashboardController::class, 'index']);
 
@@ -102,13 +110,12 @@ Route::middleware(['auth:admin'])->group(function () {
     // Route::get('/confirm/{id}', [PemesananController::class, 'confirm']);
     // Route::get('/tolak/{id}', [PemesananController::class, 'tolak']);
 
-    // ARTIKEL
-    Route::get('/admin/artikel', [LayananController::class, 'index']);
-    Route::get('/admin/artikel/tambah', [LayananController::class, 'create']);
-    Route::post('/admin/artikel/tambah', [LayananController::class, 'store']);
-    Route::get('/admin/artikel/{id}', [LayananController::class, 'edit']);
-    Route::post('/admin/artikel/update', [LayananController::class, 'update']);
-    Route::delete('/admin/artikel/{id}', [LayananController::class, 'destroy']);
+    // Handle Artikel    
+
+    Route::resource('artikel', ArtikelController::class);
+
+    // Handle Promo Carousel    
+    Route::resource('carousel-promo', CarouselPromoController::class);
 });
 // Route::get('/', function () {
 //     return view('welcome');

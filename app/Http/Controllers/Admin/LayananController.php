@@ -130,7 +130,7 @@ class LayananController extends Controller
                     'icon' => $data->icon
                 ]);
         }
-        toast('Data Berhasil Di Update', 'success')->autoClose(5000)->hideCloseButton()->timerProgressBar()->width('320px');
+        toast('Data Berhasil Di Update', 'success')->autoClose(5000)->timerProgressBar();
         return redirect('/admin/layanan');
     }
 

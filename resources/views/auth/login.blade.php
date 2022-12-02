@@ -3,7 +3,7 @@
     <section class="tw-min-h-screen tw-bg-orange tw-pb-16">
         <div class="tw-mx-auto tw-flex tw-h-full tw-flex-col tw-items-center tw-justify-center tw-px-4 tw-py-8 md:tw-h-screen lg:tw-py-0">
             <a href="#" class="tw-mb-6 tw-flex tw-items-center tw-text-2xl tw-font-semibold tw-text-gray-900">
-                <img src="assets/img/brand/servisin.png" class="tw-mx-auto tw-h-[90px] tw-max-w-lg mobile:tw-h-[65px]" alt="">
+                <img src="{{ url('assets/img/brand/servisin.png') }}" class="tw-mx-auto tw-h-[90px] tw-max-w-lg mobile:tw-h-[65px]" alt="">
             </a>
             <div class="tw-w-full tw-rounded-lg tw-bg-white tw-shadow sm:tw-max-w-md md:tw-mt-0 xl:tw-p-0">
                 <div class="tw-font-poppins tw-mx-auto tw-space-y-4 tw-p-6 sm:tw-p-8 md:tw-space-y-6">
