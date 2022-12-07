@@ -47,13 +47,6 @@
                                         <input type="text" class="form-control" name="telp" placeholder="No Telpon">
                                     </div>
                                     <div class="form-group">
-                                        <label for="gender">Jabatan</label>
-                                        <select name="jabatan" class="form-control" id="jabatan">
-                                            <option value='Manager'>Manager</option>
-                                            <option value='Pegawai'>Pegawai</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
                                         <label for="inputPassword" class="col-form-label">Password</label>
                                         <div class="col-sm-14">
                                             <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id=" inputPassword" placeholder="Password" required>
@@ -70,11 +63,11 @@
                                             <input type="password" name="password_confirmation" class="form-control @error('password') is-invalid @enderror" id="inputName2" placeholder="Konfirmasi Password" required>
                                         </div>
                                     </div>
+                                    <!-- /.card-body -->
                                 </div>
-                                <!-- /.card-body -->
                                 <div class="card-footer">
                                     <button class="btn btn-primary">Submit</button>
-                                    <a href="{{ url('/admin/data-admin') }}" class="btn btn-danger">Cancel</a>
+                                    <a href="{{ route('admin.index') }}" class="btn btn-danger">Cancel</a>
                                 </div>
                             </form>
                         </div>

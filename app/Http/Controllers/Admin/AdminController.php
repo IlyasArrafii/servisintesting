@@ -28,31 +28,6 @@ class AdminController extends Controller
         $admin = Admin::where('id', $id)->get();
         return view('admin.admin.profile', compact('admin'));
     }
-
-    public function changepass(Request $request)
-    {
-        $request->validate([
-            'password' => 'confirmed',
-        ]);
-        $user = Admin::where('id', $request->input('id_admin'))->update([
-            'password' => bcrypt($request->input('password'))
-        ]);
-        toast('Berhasil Ganti Password', 'success')->autoClose(5000)->hideCloseButton()->timerProgressBar()->width('320px');
-
-        return redirect('/admin/dashboard');
-    }
-
-    public function changeprofile(Request $request)
-    {
-        $admin = Admin::where('id', $request->input('id_admin'))->update([
-            'name' => $request->input('nama'),
-            'notelpon' => $request->input('telp')
-        ]);
-        toast('Berhasil Update Profile', 'success')->autoClose(5000)->hideCloseButton()->timerProgressBar()->width('320px');
-
-        return back();
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -165,5 +140,66 @@ class AdminController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    // Gate Settings
+    public function settings(Admin $admin)
+    {
+        return view('admin.admin.setting.index', [
+            'admin' => $admin,
+            'admins' => Admin::get(),
+        ]);
+    }
+
+    // View Ganti Password
+    public function settingspassword(Admin $admin)
+    {
+        return view('admin.admin.setting.password', [
+            'admin' => $admin,
+            'admins' => Admin::get(),
+        ]);
+    }
+
+    // View Ganti Profile
+    public function settingsprofile(Admin $admin)
+    {
+        $gateData = auth()->guard('admin')->user()->id;
+        $admins = Admin::where('id', $gateData);
+        return view('admin.admin.setting.profile', compact('admins'));
+    }
+
+    // Update Buat Ganti Password/Sandi
+    public function changepass(Request $request)
+    {
+        $request->validate([
+            'old_password' => 'required',
+            'password' => ['required', 'string', 'min:8', 'confirmed']
+        ]);
+
+        $currentPassword = auth()->guard('admin')->user()->password;
+        $oldPassword = $request->old_password;
+        if (Hash::check($oldPassword, $currentPassword)) {
+            auth()->guard('admin')->user()->update([
+                'password' => bcrypt($request->password),
+            ]);
+            toast('Berhasil Mengganti Password', 'success')->autoClose(3000)->timerProgressBar();
+            return redirect()->route('admin.settings');
+        } else {
+            toast('Harap Cek Password saat ini', 'error')->autoClose(3000)->timerProgressBar();
+            return back();
+        }
+    }
+
+    // Update Buat Profile
+    public function changeprofile(Request $request)
+    {
+        Admin::where('id', $request->input('id'))->update([
+            'name' => $request->input('nama'),
+            'email' => $request->input('email'),
+            'notelpon' => $request->input('telp'),
+        ]);
+        toast('Berhasil Update Profile', 'success')->autoClose(5000)->timerProgressBar();
+
+        return redirect()->route('admin.settings');
     }
 }

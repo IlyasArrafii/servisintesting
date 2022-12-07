@@ -60,11 +60,12 @@
                                         <td>{{ $item->author }}</td>
                                         <!-- <td><img src="{{ asset('storage/' . $item->foto_artikel . '') }}" width="130" height="150" class="rounded-circle"></td> -->
                                         <td>
-                                            <a href="{{ url('/admin/data-admin/' . $item->id . '') }}" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+                                            <a href="{{ route('admin.artikel.edit', $item->id) }}" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
                                             <a href="#" data-id="{{ $item->id }}" class="btn btn-danger confirm"><i class="fas fa-trash-alt"></i></a>
-                                            <form action="/anggota/{{ $item->id }}" id="delete{{ $item->id }}" method="post" class="d-inline">
-                                                @csrf
+                                            <form action="{{ route('admin.artikel.destroy', $item->id) }}" id="delete{{ $item->id }}" method="POST" class="d-inline">
                                                 @method('delete')
+                                                @csrf
+                                                {{-- <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button> --}}
                                             </form>
                                         </td>
                                     </tr>
@@ -87,14 +88,26 @@
                     title: 'Yakin akan menghapus ?',
                     text: 'Data akan dihapus permanen!',
                     icon: 'warning',
-                    buttons: true,
                     dangerMode: true,
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Iya'
                 })
                 .then((willDelete) => {
-                    if (willDelete) {
+                    if (willDelete.isConfirmed) {
+                        Swal.fire(
+                            'Deleted!',
+                            'Data Telah Dihapus',
+                            'success'
+                        )
                         $(`#delete${id}`).submit();
-                    } else {
-
+                    } else if (willDelete.isDismissed) {
+                        Swal.fire(
+                            'Cancelled',
+                            'Data Tidak Dihapus',
+                            'error'
+                        )
                     }
                 });
         });

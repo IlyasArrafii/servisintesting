@@ -61,33 +61,33 @@ class DataPemesananController extends Controller
         $pemesanan = Pemesanan::where('id', $id)->update([
             'status' => '3'
         ]);
-        return redirect('/admin-pemesanan');
+        return redirect()->route('admin.pemesananIndex');
     }
     public function teknisidatang($id)
     {
         $pemesanan = Pemesanan::where('id', $id)->update([
             'status' => '4'
         ]);
-        return redirect('/admin-pemesanan');
+        return redirect()->route('admin.pemesananIndex');
     }
     public function batalpesanan($id)
     {
         $pemesanan = Pemesanan::where('id', $id)->delete();
-        return redirect('/admin-pemesanan');
+        return redirect()->route('admin.pemesananIndex');
     }
     public function selesai($id)
     {
         $pemesanan = Pemesanan::where('id', $id)->update([
             'status' => '5'
         ]);
-        return redirect('/admin-pemesanan');
+        return redirect()->route('admin.pemesananIndex');
     }
     public function komplainselesai($id)
     {
         $pemesanan = Pemesanan::where('id', $id)->update([
             'status' => '7'
         ]);
-        return redirect('/admin-pemesanan');
+        return redirect()->route('admin.pemesananIndex');
     }
     /**
      * Show the form for creating a new resource.

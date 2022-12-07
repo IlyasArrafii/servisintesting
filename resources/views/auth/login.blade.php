@@ -27,12 +27,12 @@
                         </div>
                         <div class="tw-flex tw-items-center tw-justify-between">
                             <div class="tw-flex tw-items-start">
-                                <div class="tw-flex tw-h-5 tw-items-center">
+                                {{-- <div class="tw-flex tw-h-5 tw-items-center">
                                     <input id="remember" aria-describedby="remember" type="checkbox" class="focus:tw-ring-3 tw-h-4 tw-w-4 tw-rounded tw-border tw-border-gray-300 tw-bg-gray-50 focus:tw-ring-orange" required="">
                                 </div>
                                 <div class="tw-ml-3 tw-text-sm">
                                     <label for="remember" class="tw-text-black">Remember me</label>
-                                </div>
+                                </div> --}}
                             </div>
                             @if (Route::has('password.request'))
                                 <a href="{{ route('password.request') }}" class="tw-text-sm tw-font-medium tw-text-black hover:tw-text-orange hover:tw-no-underline">Lupa

@@ -9,6 +9,7 @@ module.exports = {
         "./resources/**/*.js",
         "./resources/**/*.vue",
         "./node_modules/flowbite/**/*.js",
+        "./node_modules/tw-elements/dist/js/**/*.js",
     ],
     theme: {
         extend: {
@@ -44,5 +45,10 @@ module.exports = {
             },
         },
     },
-    plugins: [require("daisyui"), require("flowbite/plugin")],
+    plugins: [
+        require("daisyui"),
+        require("flowbite/plugin"),
+        require("@tailwindcss/typography"),
+        require("tw-elements/dist/plugin"),
+    ],
 };

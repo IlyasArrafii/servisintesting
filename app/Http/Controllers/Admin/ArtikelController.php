@@ -18,7 +18,7 @@ class ArtikelController extends Controller
      */
     public function index()
     {
-        $getDataArtikel = Artikel::all();
+        $getDataArtikel = Artikel::get();
         return view('admin.artikel.index', compact('getDataArtikel'));
     }
 
@@ -73,9 +73,10 @@ class ArtikelController extends Controller
      * @param  \App\Models\Artikel  $artikel
      * @return \Illuminate\Http\Response
      */
-    public function edit(Artikel $artikel)
+    public function edit($id)
     {
-        return view('admin.artikel.editartikel', ['artikel' => $artikel]);
+        $artikel = Artikel::where('id', $id)->get();
+        return view('admin.artikel.editartikel', compact('artikel'));
     }
 
     /**
@@ -85,38 +86,35 @@ class ArtikelController extends Controller
      * @param  \App\Models\Artikel  $artikel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Artikel $artikel)
+    public function update(Request $request)
     {
         if ($request->file('fotoArtikel')) {
             $icon = $request->file('fotoArtikel')->store('artikel');
-            $data = Artikel::where('id', $artikel)->first();
+            $data = Artikel::where('id', $request->input('idArtikel'))->first();
             if (!empty($data->icon)) {
                 $test = Storage::delete($data->icon);
                 $hasil = $icon;
-                Artikel::where('kode_layanan', $artikel)->update([
+                Artikel::where('kode_layanan', $request->input('idArtikel'))->update([
                     'judul' => $request->input('judulArtikel'),
                     'slug' => Str::slug($request->input('judulArtikel')),
-                    'author' => $request->input('namaAuthor'),
                     'deskripsi' => $request->input('deskripsiArtikel'),
                     'foto_artikel' => $hasil,
                 ]);
             } else {
                 $hasil = $icon;
-                Artikel::where('id', $artikel)->update([
+                Artikel::where('id', $request->input('idArtikel'))->update([
                     'judul' => $request->input('judulArtikel'),
                     'slug' => Str::slug($request->input('judulArtikel')),
-                    'author' => $request->input('namaAuthor'),
                     'deskripsi' => $request->input('deskripsiArtikel'),
                     'foto_artikel' => $hasil,
                     'icon' => $hasil
                 ]);
             }
         } else {
-            $data = Artikel::where('id', $artikel)->first();
-            Artikel::where('id', $artikel)->update([
+            $data = Artikel::where('id', $request->input('idArtikel'))->first();
+            Artikel::where('id', $request->input('idArtikel'))->update([
                 'judul' => $request->input('judulArtikel'),
                 'slug' => Str::slug($request->input('judulArtikel')),
-                'author' => $request->input('namaAuthor'),
                 'deskripsi' => $request->input('deskripsiArtikel'),
                 'foto_artikel' => $data->foto_artikel,
             ]);
@@ -136,8 +134,8 @@ class ArtikelController extends Controller
         if ($artikel->foto_artikel) {
             Storage::delete($artikel->foto_artikel);
         }
-        Artikel::where('id', $artikel)->delete();
-        toast('Data Berhasil Di Hapus', 'success')->autoClose(3000)->timerProgressBar();
+        $artikel->delete();
+        toast('Data Berhasil Di Hapus' . ' ' . $artikel->judul . '', 'success')->autoClose(3000)->timerProgressBar();
         return redirect()->route('admin.artikel.index');
     }
 }

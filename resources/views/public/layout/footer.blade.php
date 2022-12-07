@@ -1,7 +1,7 @@
 <!-- FOOTER -->
 
 <!-- Footer Start -->
-<footer class="mobile:tw-visible tw-bg-[#2C2C2C] sm:tw-visible lg:tw-visible xl:tw-visible">
+<footer class="tw-bg-[#2C2C2C] sm:tw-visible lg:tw-visible xl:tw-visible mobile:tw-visible">
     <div class="tw-mx-auto tw-px-4 tw-pt-16 tw-pb-20 sm:tw-px-8 sm:tw-pb-3 md:tw-px-8 md:tw-pb-3 lg:tw-px-8 lg:tw-pt-24 lg:tw-pb-3">
         <div class="tw-grid tw-grid-cols-1 tw-gap-8 lg:tw-grid-cols-3">
             <div>
@@ -9,7 +9,7 @@
                     <img src="{{ url('assets/img/brand/servisin.png') }}" class="tw-h-14 tw-max-w-xs" alt="">
                 </div>
 
-                <p class="tw-mx-auto tw-mt-3 tw-max-w-md tw-text-left tw-font-poppins tw-font-semibold tw-leading-relaxed tw-text-white sm:tw-mx-0 sm:tw-max-w-xs sm:tw-text-justify">
+                <p class="tw-font-poppins tw-mx-auto tw-mt-3 tw-max-w-md tw-text-left tw-font-semibold tw-leading-relaxed tw-text-white sm:tw-mx-0 sm:tw-max-w-xs sm:tw-text-justify">
                     Solusi Terbaik Servis Elektronik
                 </p>
 
@@ -68,7 +68,7 @@
             </div>
 
             <div class="tw-grid tw-grid-cols-1 tw-gap-5 sm:tw-grid-cols-2 md:tw-grid-cols-4 lg:tw-col-span-2">
-                <div class="tw-text-left sm:tw-text-left">
+                {{-- <div class="tw-text-left sm:tw-text-left">
                     <p class="tw-font-poppins tw-text-lg tw-font-semibold tw-text-white">Tentang Kami</p>
 
                     <nav class="tw-mt-8">
@@ -92,7 +92,7 @@
                             </li>
                         </ul>
                     </nav>
-                </div>
+                </div> --}}
 
                 <div class="tw-text-left sm:tw-text-left">
                     <p class="tw-font-poppins tw-text-lg tw-font-semibold tw-text-white">Layanan</p>
@@ -100,25 +100,25 @@
                     <nav class="tw-mt-6">
                         <ul class="tw-space-y-4 tw-text-sm">
                             <li>
-                                <a class="tw-font-poppins tw-text-white tw-transition hover:tw-text-gray-300" href="/">
+                                <a href="#layanan" class="tw-font-poppins tw-text-white tw-transition hover:tw-text-gray-300">
                                     Layanan Servis
                                 </a>
                             </li>
 
                             <li>
-                                <a class="tw-font-poppins tw-text-white tw-transition hover:tw-text-gray-300" href="/">
+                                <a href="#memesan" class="tw-font-poppins tw-text-white tw-transition hover:tw-text-gray-300">
                                     Cara Memesan
                                 </a>
                             </li>
 
                             <li>
-                                <a class="tw-font-poppins tw-text-white tw-transition hover:tw-text-gray-300" href="/">
+                                <a href="#keunggulan" class="tw-font-poppins tw-text-white tw-transition hover:tw-text-gray-300">
                                     Keunggulan Servisin
                                 </a>
                             </li>
 
                             <li>
-                                <a class="tw-font-poppins tw-text-white tw-transition hover:tw-text-gray-300" href="/">
+                                <a href="#testimoni" class="tw-font-poppins tw-text-white tw-transition hover:tw-text-gray-300">
                                     Testimoni
                                 </a>
                             </li>
@@ -132,13 +132,13 @@
                     <nav class="tw-mt-6">
                         <ul class="tw-space-y-4 tw-text-sm">
                             <li>
-                                <a class="tw-font-poppins tw-text-white tw-transition hover:tw-text-gray-300" href="/">
+                                <a href="#mitra" class="tw-font-poppins tw-text-white tw-transition hover:tw-text-gray-300" href="/">
                                     Mitra Penyedia Jasa
                                 </a>
                             </li>
 
                             <li>
-                                <a class="tw-font-poppins tw-text-white tw-transition hover:tw-text-gray-300" href="/">
+                                <a href="#mitra" class="tw-font-poppins tw-text-white tw-transition hover:tw-text-gray-300" href="/">
                                     Daftar Mitra
                                 </a>
                             </li>
@@ -151,7 +151,7 @@
 
                     <ul class="tw-mt-6 tw-space-y-4 tw-text-sm">
                         <li>
-                            <a class="tw-flex tw-gap-1.5 tw-text-left sm:tw-justify-start" href="/">
+                            <a class="tw-flex tw-gap-1.5 tw-text-left sm:tw-justify-start" href="mailto:servisinapp@gmail.com" target="_blank" rel="noopener noreferrer">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="tw-h-5 tw-w-5 tw-shrink-0 tw-text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
@@ -161,7 +161,7 @@
                         </li>
 
                         <li>
-                            <a class="tw-flex tw-gap-1.5 sm:tw-justify-start" href="/">
+                            <a class="tw-flex tw-gap-1.5 sm:tw-justify-start" href="https://wa.me/6285772277727" target="_blank" rel="noopener noreferrer">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="tw-h-5 tw-w-5 tw-shrink-0 tw-text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                 </svg>
@@ -170,15 +170,17 @@
                             </a>
                         </li>
 
-                        <li class="tw-flex tw-items-start tw-justify-center tw-gap-1.5 sm:tw-justify-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="tw-h-5 tw-w-5 tw-shrink-0 tw-text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
+                        <li>
+                            <a class="tw-flex tw-items-start tw-justify-center tw-gap-1.5 sm:tw-justify-start" href="https://goo.gl/maps/BptfHRSCvTL9tEW1A" target="_blank" rel="noopener noreferrer">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="tw-h-5 tw-w-5 tw-shrink-0 tw-text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
 
-                            <address class="-tw-mt-0.5 tw-text-justify tw-font-poppins tw-not-italic tw-text-white tw-transition hover:tw-text-gray-300 md:tw-text-xs">
-                                Jl. Raya Kedung Baruk No.98, Kedung Baruk, Kec. Rungkut, Kota SBY, Jawa Timur 60298
-                            </address>
+                                <address class="tw-font-poppins -tw-mt-0.5 tw-text-justify tw-not-italic tw-text-white tw-transition hover:tw-text-gray-300 md:tw-text-xs">
+                                    Jl. Raya Kedung Baruk No.98, Kedung Baruk, Kec. Rungkut, Kota SBY, Jawa Timur 60298
+                                </address>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -188,22 +190,22 @@
         <div class="tw-mt-12 tw-border-t tw-border-gray-100 tw-pt-6">
             <div class="tw-text-left sm:tw-flex sm:tw-justify-between sm:tw-text-left">
                 <p class="tw-text-sm tw-text-gray-500">
-                    <span class="tw-block tw-font-poppins tw-text-white sm:tw-inline">All rights
+                    <span class="tw-font-poppins tw-block tw-text-white sm:tw-inline">All rights
                         reserved.</span>
 
-                    <a class="tw-inline-block tw-font-poppins tw-font-semibold tw-text-white tw-underline tw-transition hover:tw-text-gray-300" href="/">
+                    <a class="tw-font-poppins tw-inline-block tw-font-semibold tw-text-white tw-underline tw-transition hover:tw-text-gray-300" href="/">
                         Terms & Conditions
                     </a>
 
                     <span>&middot;</span>
 
-                    <a class="tw-inline-block tw-font-poppins tw-font-semibold tw-text-white tw-underline tw-transition hover:tw-text-gray-300" href="/">
+                    <a class="tw-font-poppins tw-inline-block tw-font-semibold tw-text-white tw-underline tw-transition hover:tw-text-gray-300" href="/">
                         Privacy Policy
                     </a>
                 </p>
 
-                <p class="tw-mt-4 tw-font-poppins tw-text-sm tw-text-white tw-transition hover:tw-text-gray-300 sm:tw-order-first sm:tw-mt-0">
-                    &copy; Servisin Indonesia
+                <p class="tw-font-poppins tw-mt-4 tw-text-sm tw-text-white tw-transition hover:tw-text-gray-300 sm:tw-order-first sm:tw-mt-0">
+
                 </p>
             </div>
         </div>

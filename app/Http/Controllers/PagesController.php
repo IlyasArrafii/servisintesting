@@ -10,6 +10,7 @@ use App\Models\Pemesanan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use DB;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Carbon;
 
 class PagesController extends Controller
@@ -20,8 +21,10 @@ class PagesController extends Controller
         $layanan = Layanan::all();
         $getDataArtikel = Artikel::latest()->orderBy('id', 'asc')->limit(3)->get();
         $today = Carbon::now()->isoFormat('dddd, D MMMM Y');
+        $getLayanan = Layanan::get()->count();
+        $getPemesanan = Pemesanan::get()->count();
         // dd($getDataArtikel);
-        return view('public.home.index', compact('layanan', 'today', 'getDataArtikel'));
+        return view('public.home.index', compact('layanan', 'today', 'getDataArtikel', 'getLayanan', 'getPemesanan'));
     }
     public function login()
     {
@@ -142,13 +145,15 @@ class PagesController extends Controller
     public function detailArtikel($slug)
     {
         $getDetailArtikel = Artikel::where('slug', $slug)->get();
-        return view('public.artikel.detail', compact('getDetailArtikel'));
+        $getLatestArtikel = Artikel::latest()->orderBy('id', 'asc')->limit(3)->get();
+        // dd($getLatestArtikel);
+        return view('public.artikel.detail', compact('getDetailArtikel', 'getLatestArtikel'));
     }
 
     // Handle Artikel Selengkapnya
     public function selengkapnyaArtikel()
     {
-        $getDataAllArtikel = Artikel::all();
-        return view('public.artikel.selengkapnya', compact('getDataAllArtikel'));
+        $paginate = Artikel::paginate(3);
+        return view('public.artikel.index', compact('paginate'));
     }
 }

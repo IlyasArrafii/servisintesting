@@ -53,16 +53,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($admin as $item)
+                                @foreach ($admins as $admin)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->name }}</td>
-                                        <td>{{ $item->email }}</td>
-                                        <!-- <td><img src="{{ asset('storage/' . $item->gambar . '') }}" width="130" height="150" class="rounded-circle"></td> -->
+                                        <td>{{ $admin->name }}</td>
+                                        <td>{{ $admin->email }}</td>
                                         <td>
-                                            <a href="{{ url('/admin/data-admin/' . $item->id . '') }}" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
-                                            <a href="#" data-id="{{ $item->id }}" class="btn btn-danger confirm"><i class="fas fa-trash-alt"></i></a>
-                                            <form action="/anggota/{{ $item->id }}" id="delete{{ $item->id }}" method="post" class="d-inline">
+                                            <a href="{{ route('admin.edit', $admin) }}" class="btn btn-primary">Edit</a>
+                                            <a href="#" data-id="{{ $admin->id }}" class="btn btn-danger confirm">Delete</a>
+                                            <form action="{{ route('admin.delete', $admin) }}" id="delete{{ $admin->id }}" method="post" class="d-inline">
                                                 @csrf
                                                 @method('delete')
                                             </form>
@@ -80,23 +79,4 @@
         </section>
         <!-- /.content -->
     </div>
-    <script text="text/javascript">
-        $(".confirm").on('click', function(e) {
-            id = e.target.dataset.id;
-            Swal.fire({
-                    title: 'Yakin akan menghapus ?',
-                    text: 'Data akan dihapus permanen!',
-                    icon: 'warning',
-                    buttons: true,
-                    dangerMode: true,
-                })
-                .then((willDelete) => {
-                    if (willDelete) {
-                        $(`#delete${id}`).submit();
-                    } else {
-
-                    }
-                });
-        });
-    </script>
 @endsection

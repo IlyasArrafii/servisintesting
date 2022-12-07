@@ -35,7 +35,7 @@ class LoginController extends Controller
         if ($admin) {
             if (Hash::check($password, $admin->password)) {
                 Auth::guard('admin')->login($admin);
-                return redirect('/admin/dashboard');
+                return redirect()->route('admin.dashboard.index');
             } else {
                 return back()->with('warning', ' ');
             }

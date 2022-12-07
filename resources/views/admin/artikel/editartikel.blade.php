@@ -29,43 +29,41 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form action="{{ url('/admin/layanan/update') }}" method="POST" enctype="multipart/form-data">
-                                @foreach ($layanan as $item)
-                                    @csrf
+                            <form action="{{ route('admin.artikel.updateData') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                @method('PUT')
+                                @foreach ($artikel as $item)
+                                    <input type="hidden" name="idArtikel" value="{{ $item->id }}">
                                     <div class="card-body">
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Kode Layanan</label>
-                                            <input type="text" class="form-control" name="kode" readonly autocomplete="off" placeholder="Kode Layanan" value="{{ $item->kode_layanan }}">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputFile">Icon</label>
-                                            @if ($item->icon)
-                                                <img src="{{ asset('storage/' . $item->icon . '') }}" class="col-sm-5 d-block mb-3" width="150">
+                                            <label for="exampleInputFile">Foto Artikel</label>
+                                            @if ($item->foto_artikel)
+                                                <img src="{{ asset('storage/' . $item->foto_artikel . '') }}" class="col-sm-5 d-block mb-3" width="150">
                                             @else
                                                 <img class="img-preview img-fluid col-sm-5 mb-3">
                                             @endif
                                             <div class="input-group">
                                                 <div class="custom-file">
-                                                    <input type="file" class="form-control" name="icon" onchange="previewImage()" id="gambar">
+                                                    <input type="file" class="form-control" name="fotoArtikel" onchange="previewImage()" id="gambar">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputPassword1">Nama Layanan</label>
-                                            <input type="text" class="form-control" name="nama" autocomplete="off" placeholder="AC" value="{{ $item->nama_layanan }}">
+                                            <label for="exampleInputPassword1">Judul</label>
+                                            <input type="text" class="form-control" name="judulArtikel" autocomplete="off" placeholder="AC" value="{{ $item->judul }}">
                                         </div>
                                         <div class="form-group">
-                                            <label for="editor">Syarat & Ketentuan</label>
-                                            <textarea type="text" class="form-control" name="syarat" placeholder="Syarat dan Ketentuan" id="editor">{{ $item->syarat }}</textarea>
+                                            <label for="editor">Deskripsi</label>
+                                            <textarea type="text" class="form-control" name="deskripsiArtikel" placeholder="Syarat dan Ketentuan" id="editor">{{ $item->deskripsi }}</textarea>
                                         </div>
                                     </div>
                                     <!-- /.card-body -->
                                     <div class="card-footer">
                                         <button type="submit" class="btn btn-warning">Edit</button>
-                                        <a href="{{ url('/admin/layanan') }}" class="btn btn-danger">Cancel</a>
+                                        <a href="{{ route('admin.artikel.index') }}" class="btn btn-danger">Cancel</a>
                                     </div>
+                                @endforeach
                             </form>
-                            @endforeach
                         </div>
                     </div>
                 </div>
