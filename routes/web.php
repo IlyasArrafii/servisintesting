@@ -55,6 +55,7 @@ Route::get('/artikel/{slug}', [PagesController::class, 'detailArtikel'])->name('
 
 // Handle All Artikel
 Route::get('/artikel/selengkapnya', [PagesController::class, 'selengkapnyaArtikel'])->name('home.artikelSelengkapnya');
+Route::get('/test', [PagesController::class, 'test']);
 
 
 

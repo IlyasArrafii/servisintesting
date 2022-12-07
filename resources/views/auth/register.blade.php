@@ -13,12 +13,13 @@
                         <span class="tw-font-poppins tw-text-sm tw-font-normal">Silahkan mengisi form pendaftaran
                             akun</span>
                     </h1>
-                    <form class="tw-space-y-4 md:tw-space-y-6" action="#">
+                    <form action="{{ route('register') }}" method="POST" class="tw-space-y-4 md:tw-space-y-6">
+                        @csrf
                         <div>
                             <input type="text" name="name" id="name" class="tw-block tw-w-full tw-rounded-lg tw-border tw-border-gray-300 tw-bg-gray-50 tw-p-2.5 tw-text-gray-900 focus:tw-border-orange focus:tw-ring-orange sm:tw-text-sm" required placeholder="Nama Lengkap">
                         </div>
                         <div>
-                            <input type="text" name="nomor" id="nomor" class="tw-block tw-w-full tw-rounded-lg tw-border tw-border-gray-300 tw-bg-gray-50 tw-p-2.5 tw-text-gray-900 focus:tw-border-orange focus:tw-ring-orange sm:tw-text-sm" required placeholder="Nomor WhatsApp">
+                            <input type="text" name="notelpon" id="notelpon" class="tw-block tw-w-full tw-rounded-lg tw-border tw-border-gray-300 tw-bg-gray-50 tw-p-2.5 tw-text-gray-900 focus:tw-border-orange focus:tw-ring-orange sm:tw-text-sm" required placeholder="Nomor WhatsApp">
                         </div>
                         <div>
                             <input type="email" name="email" id="email" class="tw-block tw-w-full tw-rounded-lg tw-border tw-border-gray-300 tw-bg-gray-50 tw-p-2.5 tw-text-gray-900 focus:tw-border-orange focus:tw-ring-orange sm:tw-text-sm" required placeholder="Email">
@@ -27,7 +28,7 @@
                             <input type="password" name="password" id="password" class="tw-block tw-w-full tw-rounded-lg tw-border tw-border-gray-300 tw-bg-gray-50 tw-p-2.5 tw-text-gray-900 focus:tw-border-orange focus:tw-ring-orange sm:tw-text-sm" required placeholder="Password Min. 8 Karakter">
                         </div>
                         <div>
-                            <input type="password" name="password" id="password" class="tw-block tw-w-full tw-rounded-lg tw-border tw-border-gray-300 tw-bg-gray-50 tw-p-2.5 tw-text-gray-900 focus:tw-border-orange focus:tw-ring-orange sm:tw-text-sm" required placeholder="Konfirmasi Password">
+                            <input type="password" name="password_confirmation" id="password_confirmation" class="tw-block tw-w-full tw-rounded-lg tw-border tw-border-gray-300 tw-bg-gray-50 tw-p-2.5 tw-text-gray-900 focus:tw-border-orange focus:tw-ring-orange sm:tw-text-sm" required placeholder="Konfirmasi Password">
                         </div>
                         <button type="submit" class="tw-w-full tw-rounded-lg tw-bg-orange tw-px-5 tw-py-2.5 tw-text-center tw-text-sm tw-font-medium tw-text-white hover:tw-bg-orange/90 focus:tw-outline-none focus:tw-ring-4 focus:tw-ring-orange">Daftar</button>
                         <p class="tw-font-poppins tw-text-center tw-text-sm tw-font-light tw-text-gray-500 dark:tw-text-gray-400">

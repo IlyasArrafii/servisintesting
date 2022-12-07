@@ -15,7 +15,10 @@ use Illuminate\Support\Carbon;
 
 class PagesController extends Controller
 {
-
+    public function test()
+    {
+        return view('public.home.carousel');
+    }
     public function index()
     {
         $layanan = Layanan::all();

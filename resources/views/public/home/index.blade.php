@@ -25,45 +25,23 @@
                     </div>
                     <!-- Carousel Start -->
                     <div class="tw-relative tw-overflow-hidden tw-rounded-lg sm:tw-h-80 lg:tw-order-last lg:tw-h-full">
-                        <div id="controls-carousel" class="tw-relative" data-carousel="slide">
+                        <div id="default-carousel" class="tw-relative" data-carousel="slide">
                             <!-- Carousel wrapper -->
-                            <div class="tw-relative tw-mx-auto tw-h-56 tw-overflow-hidden tw-rounded-lg sm:tw-h-[241px] sm:tw-w-[568px] md:tw-h-96 lg:tw-h-[192px] lg:tw-w-[453px] xl:tw-h-[292px] xl:tw-w-[590px] mobile:tw-h-[165px] mobile:tw-w-full tablet:tw-h-[241px] tablet:tw-w-[568px]">
+                            <div class="tw-relative tw-mx-auto tw-h-56 tw-overflow-hidden tw-rounded-lg md:tw-h-96 mobile:tw-w-full mobile:tw-h-[165px] sm:tw-w-[568px] sm:tw-h-[241px] tablet:tw-w-[568px] tablet:tw-h-[241px] lg:tw-w-[453px] lg:tw-h-[192px] xl:tw-w-[590px] xl:tw-h-[292px]">
                                 <!-- Item 1 -->
-                                <div class="tw-absolute tw-inset-0 tw-z-10 -tw-translate-x-full tw-transform tw-transition-all tw-duration-700 tw-ease-in-out" data-carousel-item="1">
-                                    <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="tw-absolute tw-top-1/2 tw-left-1/2 tw-block tw-w-full -tw-translate-x-1/2 -tw-translate-y-1/2" alt="..." />
+                                <div class="tw-duration-700 tw-ease-in-out" data-carousel-item>
+                                    <span class="tw-absolute tw-text-2xl tw-font-semibold tw-text-white -tw-translate-x-1/2 -tw-translate-y-1/2 tw-top-1/2 tw-left-1/2 sm:tw-text-3xl dark:tw-text-gray-800"></span>
+                                    <img src="https://source.unsplash.com/150x150?programming" class="tw-absolute tw-block tw-w-full -tw-translate-x-1/2 -tw-translate-y-1/2 tw-top-1/2 tw-left-1/2" alt="...">
                                 </div>
-                                <div class="tw-absolute tw-inset-0 tw-z-10 -tw-translate-x-full tw-transform tw-transition-all tw-duration-700 tw-ease-in-out" data-carousel-item="2">
-                                    <img src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp" class="tw-absolute tw-top-1/2 tw-left-1/2 tw-block tw-w-full -tw-translate-x-1/2 -tw-translate-y-1/2" alt="..." />
+                                <div class="tw-duration-700 tw-ease-in-out" data-carousel-item>
+                                    <span class="tw-absolute tw-text-2xl tw-font-semibold tw-text-white -tw-translate-x-1/2 -tw-translate-y-1/2 tw-top-1/2 tw-left-1/2 sm:tw-text-3xl dark:tw-text-gray-800"></span>
+                                    <img src="https://source.unsplash.com/150x150?programming" class="tw-absolute tw-block tw-w-full -tw-translate-x-1/2 -tw-translate-y-1/2 tw-top-1/2 tw-left-1/2" alt="...">
                                 </div>
-                                <div class="tw-absolute tw-inset-0 tw-z-10 -tw-translate-x-full tw-transform tw-transition-all tw-duration-700 tw-ease-in-out" data-carousel-item="3">
-                                    <img src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp" class="tw-absolute tw-top-1/2 tw-left-1/2 tw-block tw-w-full -tw-translate-x-1/2 -tw-translate-y-1/2" alt="..." />
-                                </div>
-                                <div class="tw-absolute tw-inset-0 tw-z-10 -tw-translate-x-full tw-transform tw-transition-all tw-duration-700 tw-ease-in-out" data-carousel-item="4">
-                                    <img src="https://mdbcdn.b-cdn.net/img/new/slides/044.webp" class="tw-absolute tw-top-1/2 tw-left-1/2 tw-block tw-w-full -tw-translate-x-1/2 -tw-translate-y-1/2" alt="..." />
-                                </div>
-                                <div class="tw-absolute tw-inset-0 tw-z-10 -tw-translate-x-full tw-transform tw-transition-all tw-duration-700 tw-ease-in-out" data-carousel-item="5">
-                                    <img src="https://mdbcdn.b-cdn.net/img/new/slides/045.webp" class="tw-absolute tw-top-1/2 tw-left-1/2 tw-block tw-w-full -tw-translate-x-1/2 -tw-translate-y-1/2" alt="..." />
+                                <div class="tw-duration-700 tw-ease-in-out" data-carousel-item>
+                                    <span class="tw-absolute tw-text-2xl tw-font-semibold tw-text-white -tw-translate-x-1/2 -tw-translate-y-1/2 tw-top-1/2 tw-left-1/2 sm:tw-text-3xl dark:tw-text-gray-800"></span>
+                                    <img src="https://source.unsplash.com/150x150?programming" class="tw-absolute tw-block tw-w-full -tw-translate-x-1/2 -tw-translate-y-1/2 tw-top-1/2 tw-left-1/2" alt="...">
                                 </div>
                             </div>
-                            <!-- Slider controls -->
-
-                            <button type="button" class="tw-group tw-absolute tw-top-0 tw-left-0 tw-z-30 tw-flex tw-h-full tw-cursor-pointer tw-items-center tw-justify-center tw-px-4 focus:tw-outline-none sm:tw-left-5 tablet:tw-left-5" data-carousel-prev>
-                                <span class="tw-inline-flex tw-h-10 tw-w-10 tw-items-center tw-justify-center tw-rounded-full tw-bg-white/30 group-hover:tw-bg-white/50 group-focus:tw-outline-none group-focus:tw-ring-4 group-focus:tw-ring-white dark:tw-bg-gray-800/30 dark:group-hover:tw-bg-gray-800/60 dark:group-focus:tw-ring-gray-800/70">
-                                    <svg aria-hidden="true" class="tw-h-6 tw-w-6 tw-text-white dark:tw-text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                                    </svg>
-                                    <span class="tw-sr-only">Previous</span>
-                                </span>
-                            </button>
-                            <button type="button" class="tw-group tw-absolute tw-top-0 tw-right-0 tw-z-30 tw-flex tw-h-full tw-cursor-pointer tw-items-center tw-justify-center tw-px-4 focus:tw-outline-none sm:tw-right-5 tablet:tw-right-5" data-carousel-next>
-                                <span class="tw-inline-flex tw-h-10 tw-w-10 tw-items-center tw-justify-center tw-rounded-full tw-bg-white/30 group-hover:tw-bg-white/50 group-focus:tw-outline-none group-focus:tw-ring-4 group-focus:tw-ring-white dark:tw-bg-gray-800/30 dark:group-hover:tw-bg-gray-800/60 dark:group-focus:tw-ring-gray-800/70">
-                                    <svg aria-hidden="true" class="tw-h-6 tw-w-6 tw-text-white dark:tw-text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                    </svg>
-                                    <span class="tw-sr-only">Next</span>
-                                </span>
-                            </button>
-
                         </div>
                     </div>
                     <!-- Carousel End -->
@@ -133,7 +111,8 @@
             <div class="tw-flex tw-flex-wrap">
                 <div class="tw-w-full tw-px-4 sm:tw-mx-8 md:tw-mx-24 lg:tw-mx-auto lg:tw-w-1/3 xl:tw-mx-auto xl:tw-w-1/3">
                     <div class="tw-mb-10 tw-overflow-hidden tw-rounded-xl tw-bg-white tablet:tw-mb-0 tablet:tw-flex">
-                        <svg class="tw-mx-auto tw-mt-5 tw-h-52 tw-w-52 tw-fill-current tw-text-orange sm:tw-h-20 sm:tw-w-20 lg:tw-h-20 lg:tw-w-20 xl:tw-h-20 xl:tw-w-20 mobile:tw-h-20 mobile:tw-w-20 tablet:tw-ml-5 tablet:tw-mt-7 tablet:tw-h-[90px] tablet:tw-w-[90px]" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 467.5 467.5" style="enable-background:new 0 0 467.5 467.5;" xml:space="preserve">
+                        <svg class="tw-mx-auto tw-mt-5 tw-h-52 tw-w-52 tw-fill-current tw-text-orange sm:tw-h-20 sm:tw-w-20 lg:tw-h-20 lg:tw-w-20 xl:tw-h-20 xl:tw-w-20 mobile:tw-h-20 mobile:tw-w-20 tablet:tw-ml-5 tablet:tw-mt-7 tablet:tw-h-[90px] tablet:tw-w-[90px]" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 467.5 467.5" style="enable-background:new 0 0 467.5 467.5;" xml:space="preserve">
                             <g>
                                 <path
                                     d="M438.605,235.4c-0.7-3.8-3-7-6.3-9c-76-45.3-120.6-54.7-153.2-61.5c-4.2-0.9-8.3-1.7-12.2-2.6l-14.1-115.9
@@ -158,7 +137,8 @@
                 </div>
                 <div class="tw-w-full tw-px-4 sm:tw-mx-8 md:tw-mx-24 lg:tw-mx-auto lg:tw-w-1/3 xl:tw-mx-auto xl:tw-w-1/3">
                     <div class="tw-mb-10 tw-overflow-hidden tw-rounded-xl tw-bg-white tablet:tw-mb-0 tablet:tw-flex">
-                        <svg class="tw-mx-auto tw-mt-5 tw-h-52 tw-w-52 tw-fill-current tw-text-orange sm:tw-h-20 sm:tw-w-20 lg:tw-h-20 lg:tw-w-20 xl:tw-h-20 xl:tw-w-20 mobile:tw-h-20 mobile:tw-w-20 tablet:tw-ml-5 tablet:tw-mt-7 tablet:tw-h-[90px] tablet:tw-w-[90px]" viewBox="0 0 36 36" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <svg class="tw-mx-auto tw-mt-5 tw-h-52 tw-w-52 tw-fill-current tw-text-orange sm:tw-h-20 sm:tw-w-20 lg:tw-h-20 lg:tw-w-20 xl:tw-h-20 xl:tw-w-20 mobile:tw-h-20 mobile:tw-w-20 tablet:tw-ml-5 tablet:tw-mt-7 tablet:tw-h-[90px] tablet:tw-w-[90px]" viewBox="0 0 36 36" version="1.1" preserveAspectRatio="xMidYMid meet"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <path d="M21,12H7a1,1,0,0,1-1-1V7A1,1,0,0,1,7,6H21a1,1,0,0,1,1,1v4A1,1,0,0,1,21,12ZM8,10H20V7.94H8Z" class="clr-i-outline clr-i-outline-path-1"></path>
                             <path d="M21,14.08H7a1,1,0,0,0-1,1V19a1,1,0,0,0,1,1H18.36L22,16.3V15.08A1,1,0,0,0,21,14.08ZM20,18H8V16H20Z" class="clr-i-outline clr-i-outline-path-2"></path>
                             <path d="M11.06,31.51v-.06l.32-1.39H4V4h20V14.25L26,12.36V3a1,1,0,0,0-1-1H3A1,1,0,0,0,2,3V31a1,1,0,0,0,1,1h8A3.44,3.44,0,0,1,11.06,31.51Z" class="clr-i-outline clr-i-outline-path-3"></path>
@@ -180,7 +160,8 @@
                 </div>
                 <div class="tw-w-full tw-px-4 sm:tw-mx-8 md:tw-mx-24 lg:tw-mx-auto lg:tw-w-1/3 xl:tw-mx-auto xl:tw-w-1/3">
                     <div class="tw-mb-10 tw-overflow-hidden tw-rounded-xl tw-bg-white tablet:tw-mb-0 tablet:tw-flex">
-                        <svg class="tw-mx-auto tw-mt-5 tw-h-52 tw-w-52 tw-fill-current tw-text-orange sm:tw-h-20 sm:tw-w-20 lg:tw-h-20 lg:tw-w-20 xl:tw-h-20 xl:tw-w-20 mobile:tw-h-20 mobile:tw-w-20 tablet:tw-ml-5 tablet:tw-mt-7 tablet:tw-h-[90px] tablet:tw-w-[90px]" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 511.999 511.999;" xml:space="preserve">
+                        <svg class="tw-mx-auto tw-mt-5 tw-h-52 tw-w-52 tw-fill-current tw-text-orange sm:tw-h-20 sm:tw-w-20 lg:tw-h-20 lg:tw-w-20 xl:tw-h-20 xl:tw-w-20 mobile:tw-h-20 mobile:tw-w-20 tablet:tw-ml-5 tablet:tw-mt-7 tablet:tw-h-[90px] tablet:tw-w-[90px]" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 511.999 511.999;" xml:space="preserve">
                             <g>
                                 <g>
                                     <path
@@ -250,7 +231,8 @@
             <div class="tw-flex tw-flex-wrap">
                 <div class="tw-w-full tw-px-4 sm:tw-mx-8 md:tw-mx-24 lg:tw-mx-auto lg:tw-w-1/3 xl:tw-mx-auto xl:tw-w-1/3">
                     <div class="tw-mb-10 tw-overflow-hidden tw-rounded-xl tw-bg-white tw-shadow-lg tablet:tw-flex">
-                        <svg class="tw-mx-auto tw-mt-5 tw-h-52 tw-w-52 tw-fill-current tw-text-orange sm:tw-h-20 sm:tw-w-20 lg:tw-h-20 lg:tw-w-20 xl:tw-h-20 xl:tw-w-20 mobile:tw-h-20 mobile:tw-w-20 tablet:tw-ml-5 tablet:tw-mt-7 tablet:tw-h-[90px] tablet:tw-w-[90px]" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 349.667 349.667" style="enable-background:new 0 0 349.667 349.667;" xml:space="preserve">
+                        <svg class="tw-mx-auto tw-mt-5 tw-h-52 tw-w-52 tw-fill-current tw-text-orange sm:tw-h-20 sm:tw-w-20 lg:tw-h-20 lg:tw-w-20 xl:tw-h-20 xl:tw-w-20 mobile:tw-h-20 mobile:tw-w-20 tablet:tw-ml-5 tablet:tw-mt-7 tablet:tw-h-[90px] tablet:tw-w-[90px]" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 349.667 349.667" style="enable-background:new 0 0 349.667 349.667;" xml:space="preserve">
                             <g>
                                 <path
                                     d="M174.834,197.204c24.125,0,80.846-29.034,80.846-98.603c0-9.703-0.237-19.076-1.036-27.933
@@ -288,7 +270,8 @@
                 </div>
                 <div class="tw-w-full tw-px-4 sm:tw-mx-8 md:tw-mx-24 lg:tw-mx-auto lg:tw-w-1/3 xl:tw-mx-auto xl:tw-w-1/3">
                     <div class="tw-mb-10 tw-overflow-hidden tw-rounded-xl tw-bg-white tw-shadow-lg tablet:tw-flex">
-                        <svg class="tw-mx-auto tw-mt-5 tw-h-52 tw-w-52 tw-fill-current tw-text-orange sm:tw-h-20 sm:tw-w-20 lg:tw-h-20 lg:tw-w-20 xl:tw-h-20 xl:tw-w-20 mobile:tw-h-20 mobile:tw-w-20 tablet:tw-ml-5 tablet:tw-mt-7 tablet:tw-h-[90px] tablet:tw-w-[90px]" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 489 489" style="enable-background:new 0 0 489 489;" xml:space="preserve">
+                        <svg class="tw-mx-auto tw-mt-5 tw-h-52 tw-w-52 tw-fill-current tw-text-orange sm:tw-h-20 sm:tw-w-20 lg:tw-h-20 lg:tw-w-20 xl:tw-h-20 xl:tw-w-20 mobile:tw-h-20 mobile:tw-w-20 tablet:tw-ml-5 tablet:tw-mt-7 tablet:tw-h-[90px] tablet:tw-w-[90px]" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 489 489" style="enable-background:new 0 0 489 489;" xml:space="preserve">
                             <g>
                                 <g>
                                     <path d="M339.4,102c0-10-8.1-18.1-18.1-18.1h-69.9c-10,0-18.1,8.1-18.1,18.1v69.9c0,10,8.1,18.1,18.1,18.1h69.9
@@ -325,8 +308,10 @@
                 </div>
                 <div class="tw-w-full tw-px-4 sm:tw-mx-8 md:tw-mx-24 lg:tw-mx-auto lg:tw-w-1/3 xl:tw-mx-auto xl:tw-w-1/3">
                     <div class="tw-mb-10 tw-overflow-hidden tw-rounded-xl tw-bg-white tw-shadow-lg tablet:tw-flex">
-                        <svg class="tw-mx-auto tw-mt-5 tw-h-52 tw-w-52 tw-fill-current tw-text-orange sm:tw-h-20 sm:tw-w-20 lg:tw-h-20 lg:tw-w-20 xl:tw-h-20 xl:tw-w-20 mobile:tw-h-20 mobile:tw-w-20 tablet:tw-ml-5 tablet:tw-mt-7 tablet:tw-h-[90px] tablet:tw-w-[90px]" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 229.5 229.5" style="enable-background:new 0 0 229.5 229.5;" xml:space="preserve">
-                            <path d="M214.419,32.12c-0.412-2.959-2.541-5.393-5.419-6.193L116.76,0.275c-1.315-0.366-2.704-0.366-4.02,0L20.5,25.927
+                        <svg class="tw-mx-auto tw-mt-5 tw-h-52 tw-w-52 tw-fill-current tw-text-orange sm:tw-h-20 sm:tw-w-20 lg:tw-h-20 lg:tw-w-20 xl:tw-h-20 xl:tw-w-20 mobile:tw-h-20 mobile:tw-w-20 tablet:tw-ml-5 tablet:tw-mt-7 tablet:tw-h-[90px] tablet:tw-w-[90px]" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 229.5 229.5" style="enable-background:new 0 0 229.5 229.5;" xml:space="preserve">
+                            <path
+                                d="M214.419,32.12c-0.412-2.959-2.541-5.393-5.419-6.193L116.76,0.275c-1.315-0.366-2.704-0.366-4.02,0L20.5,25.927
                         	c-2.878,0.8-5.007,3.233-5.419,6.193c-0.535,3.847-12.74,94.743,18.565,139.961c31.268,45.164,77.395,56.738,79.343,57.209
                         	c0.579,0.14,1.169,0.209,1.761,0.209s1.182-0.07,1.761-0.209c1.949-0.471,48.076-12.045,79.343-57.209
                         	C227.159,126.864,214.954,35.968,214.419,32.12z M174.233,85.186l-62.917,62.917c-1.464,1.464-3.384,2.197-5.303,2.197
@@ -363,54 +348,49 @@
                         <div class="swiper-slide">
                             <blockquote class="tw-rounded-lg tw-bg-white tw-p-8">
                                 <div class="tw-flex tw-items-center">
-                                    <img alt="Man" src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" class="tw-h-16 tw-w-16 tw-rounded-full tw-object-cover" />
+                                    {{-- <img alt="Man" src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" class="tw-h-16 tw-w-16 tw-rounded-full tw-object-cover" /> --}}
 
                                     <div class="tw-ml-4">
-                                        <p class="tw-mt-1 tw-text-lg tw-font-bold tw-text-gray-700">Paul
-                                            Starr</p>
+                                        <p class="tw-mt-1 tw-text-lg tw-font-bold tw-text-gray-700">Ririn Kaidawati</p>
                                     </div>
                                 </div>
 
                                 <p class="tw-mt-4 tw-mb-auto tw-text-base tw-text-black">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-
+                                    Alhamdulillah AC Saya kembali dingin setelah diservis sama Servisin, terimakasih
                                 </p>
                             </blockquote>
                         </div>
                         <div class="swiper-slide">
                             <blockquote class="tw-rounded-lg tw-bg-white tw-p-8">
                                 <div class="tw-flex tw-items-center">
-                                    <img alt="Man" src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" class="tw-h-16 tw-w-16 tw-rounded-full tw-object-cover" />
+                                    {{-- <img alt="Man" src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" class="tw-h-16 tw-w-16 tw-rounded-full tw-object-cover" /> --}}
 
                                     <div class="tw-ml-4">
-                                        <p class="tw-mt-1 tw-text-lg tw-font-bold tw-text-gray-700">Paul
-                                            Starr</p>
+                                        <p class="tw-mt-1 tw-text-lg tw-font-bold tw-text-gray-700">Erna Joeniawati</p>
                                     </div>
                                 </div>
 
                                 <p class="tw-mt-4 tw-mb-auto tw-text-base tw-text-black">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-                                    voluptatem alias ut provident sapiente repellendus.
+                                    Tekisi datang tepat waktu, perbaikan mesin cuci menyeluruh, teknisinya tanggujawab waktu ada komplain.
                                 </p>
                             </blockquote>
                         </div>
                         <div class="swiper-slide">
                             <blockquote class="tw-h-full tw-rounded-lg tw-bg-white tw-p-8">
                                 <div class="tw-flex tw-items-center">
-                                    <img alt="Man" src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" class="tw-h-16 tw-w-16 tw-rounded-full tw-object-cover" />
+                                    {{-- <img alt="Man" src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" class="tw-h-16 tw-w-16 tw-rounded-full tw-object-cover" /> --}}
 
                                     <div class="tw-ml-4">
-                                        <p class="tw-mt-1 tw-text-lg tw-font-bold tw-text-gray-700">Paul
-                                            Starr</p>
+                                        <p class="tw-mt-1 tw-text-lg tw-font-bold tw-text-gray-700">Amirul Hakim</p>
                                     </div>
                                 </div>
 
                                 <p class="tw-mt-4 tw-text-base tw-text-black">
-                                    Lorem ipsum dolor sit amet.
+                                    Pelayanannga bagus, Teknisinya komunikatif dan ramah, biaya cukup terjangkau
                                 </p>
                             </blockquote>
                         </div>
-                        <div class="swiper-slide">
+                        {{-- <div class="swiper-slide">
                             <blockquote class="tw-h-full tw-rounded-lg tw-bg-white tw-p-8">
                                 <div class="tw-flex tw-items-center">
                                     <img alt="Man" src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" class="tw-h-16 tw-w-16 tw-rounded-full tw-object-cover" />
@@ -425,7 +405,7 @@
                                     dolores ratione doloremque illum modi quos voluptatem commodi.
                                 </p>
                             </blockquote>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -467,7 +447,8 @@
                 <div class="tw-mx-2 tw-mb-2 tw-mt-3 sm:tw-mx-4 lg:tw-mx-4 xl:tw-mx-4 tablet:tw-mx-4">
                     <a href="#">
                         <div class="tw-rounded-lg tw-border tw-border-[#fff] tw-bg-[#fff] tw-shadow-lg">
-                            <svg class="tw-mx-auto tw-mb-4 tw-h-20 tw-w-20 tw-pt-4 mobile:tw-h-16 mobile:tw-w-14 tablet:tw-h-20 tablet:tw-w-20" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="256px" height="256px" viewBox="0 0 256 256" enable-background="new 0 0 256 256" xml:space="preserve">
+                            <svg class="tw-mx-auto tw-mb-4 tw-h-20 tw-w-20 tw-pt-4 mobile:tw-h-16 mobile:tw-w-14 tablet:tw-h-20 tablet:tw-w-20" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="256px" height="256px" viewBox="0 0 256 256"
+                                enable-background="new 0 0 256 256" xml:space="preserve">
                                 <path
                                     d="M136.896,147.739V92.723h45.017v55.016H136.896z M159.806,85.007c19.885,0,36.202-15.239,37.932-34.673h-75.864
                             	C123.605,69.769,139.922,85.007,159.806,85.007z M197.899,40.093c0-21.038-17.055-38.092-38.092-38.092
@@ -489,8 +470,10 @@
                 <div class="tw-mx-2 tw-mb-2 tw-mt-3 sm:tw-mx-4 lg:tw-mx-4 xl:tw-mx-4 tablet:tw-mx-4">
                     <a href="#">
                         <div class="tw-rounded-lg tw-border tw-border-[#fff] tw-bg-[#fff] tw-shadow-lg">
-                            <svg class="tw-mx-auto tw-mb-4 tw-h-20 tw-w-20 tw-fill-current tw-pt-4 tw-text-black sm:tw-w-20 mobile:tw-h-16 mobile:tw-w-14 tablet:tw-h-20 tablet:tw-w-20" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 511.997 511.997" style="enable-background:new 0 0 511.997 511.997;" xml:space="preserve">
-                                <path style="fill:#A2A9AF;" d="M443.265,13.721l0.01,98.229l-54.98,38.037l-54.96-38.057l-0.047-98.229
+                            <svg class="tw-mx-auto tw-mb-4 tw-h-20 tw-w-20 tw-fill-current tw-pt-4 tw-text-black sm:tw-w-20 mobile:tw-h-16 mobile:tw-w-14 tablet:tw-h-20 tablet:tw-w-20" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                viewBox="0 0 511.997 511.997" style="enable-background:new 0 0 511.997 511.997;" xml:space="preserve">
+                                <path style="fill:#A2A9AF;"
+                                    d="M443.265,13.721l0.01,98.229l-54.98,38.037l-54.96-38.057l-0.047-98.229
                             	c-34.073,19.247-57.133,55.751-57.133,97.724c0,16.857,4.031,32.73,10.701,47.061l-262.5,262.519
                             	c-17.037,16.979-17.01,44.583-0.038,61.572c17.036,17.036,44.611,16.999,61.61-0.01l265.674-265.682c0,0,23.792,6.613,36.655,6.622
                             	c61.964,0.048,112.159-50.205,112.159-112.13C500.407,69.461,477.358,32.959,443.265,13.721z" />
@@ -518,7 +501,8 @@
                             		c-0.01-44.521-24.167-85.805-63.042-107.744c-3.586-2.024-7.978-1.992-11.535,0.085c-3.556,2.077-5.743,5.886-5.742,10.005
                             		l0.009,92.157l-43.393,30.02l-43.378-30.04l-0.045-92.163c-0.002-4.118-2.19-7.926-5.747-10c-3.556-2.076-7.948-2.105-11.534-0.08
                             		c-38.871,21.958-63.019,63.268-63.019,107.808c0,15.045,2.873,29.949,8.552,44.415L269.098,159.864z" />
-                                    <path d="M238.425,313.682L77.734,474.379c-6.039,6.042-14.066,9.371-22.603,9.377c-0.006,0-0.01,0-0.017,0
+                                    <path
+                                        d="M238.425,313.682L77.734,474.379c-6.039,6.042-14.066,9.371-22.603,9.377c-0.006,0-0.01,0-0.017,0
                             		c-8.535-0.001-16.564-3.328-22.601-9.365c-6.036-6.043-9.356-14.081-9.346-22.636c0.009-8.529,3.335-16.536,9.379-22.56
                             		l138.216-138.228c4.523-4.523,4.523-11.857,0-16.382c-4.523-4.522-11.858-4.523-16.382,0.001L16.179,412.8
                             		C5.763,423.18,0.017,437.006,0,451.728c-0.017,14.747,5.708,28.611,16.127,39.041c10.418,10.418,24.263,16.155,38.986,16.155
